@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shadowalker77:wp7progressbar:1.0.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6db6b21abaff604767910dce1927d96/jetified-wp7progressbar-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6db6b21abaff604767910dce1927d96/jetified-wp7progressbar-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6db6b21abaff604767910dce1927d96/jetified-wp7progressbar-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41d52586ba2c227f291728615b88f194/jetified-wp7progressbar-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41d52586ba2c227f291728615b88f194/jetified-wp7progressbar-1.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41d52586ba2c227f291728615b88f194/jetified-wp7progressbar-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

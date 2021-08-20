@@ -1,0 +1,3 @@
+include ':traknpay'
+include ':app', ':otpview'
+rootProject.name = "Instant Online Matka"

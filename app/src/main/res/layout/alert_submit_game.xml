@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="15dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_mask">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedbidPointContainer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="100">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_42sdp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/round_crimson_corner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblGameNameAnswer1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mont_semi_bold"
+                                android:text="- - -"
+                                android:textAllCaps="true"
+                                android:textColor="@color/White"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout20"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/background_game_list_card"
+                            android:padding="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblNote">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:visibility="gone"
+                                android:id="@+id/lblIndex"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mont_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                android:text="@string/index"
+                                android:textAllCaps="true"
+                                android:textColor="@color/Gray"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/lblPoints"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblDigits"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mont_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                android:text="@string/digits"
+                                android:textAllCaps="true"
+                                android:textColor="@color/Gray"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/lblPoints"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/lblMode"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblPoints"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mont_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                android:text="@string/points"
+                                android:textAllCaps="true"
+                                android:textColor="@color/Gray"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/lblIndex"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/lblDigits"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblMode"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mont_semi_bold"
+                                android:gravity="center"
+                                android:text="@string/game_mode"
+                                android:textAllCaps="true"
+                                android:textColor="@color/Gray"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+
+                                app:layout_constraintEnd_toStartOf="@+id/lblDigits"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bidPointContainer1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout20" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/LightGrey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/bidPointContainer1"
+                            app:layout_constraintWidth_percent="0.9" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout21"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintInsideOne"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/constraintInsideTwo"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblTotalBid"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@string/total_bid"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblTotalBidAmount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@string/total_bid_amount"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblTotalBid" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblWalletBeforeDeduction"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@string/wallet_before_deduction"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblTotalBidAmount" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblWalletAfterDeduction"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@string/wallet_after_deduction"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblWalletBeforeDeduction" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintInsideTwo"
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/constraintInsideOne"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblTotalBidAnswer1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:gravity="end"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="10dp"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblTotalBidAmountAnswer1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:gravity="end"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="10dp"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblTotalBidAnswer1" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblWalletBeforeDeductionAnswer1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:gravity="end"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="10dp"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Green"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblTotalBidAmountAnswer1" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblWalletAfterDeductionAnswer1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:gravity="end"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="10dp"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblWalletBeforeDeductionAnswer1" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblNote"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/helvetica"
+                            android:gravity="start"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:text="@string/note_bid_once_played_will_not_be_cancelled"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toStartOf="@+id/progressBar1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout21" />
+
+                        <ir.alirezabdn.wp7progress.WP10ProgressBar
+                            android:id="@+id/progressBar1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="15dp"
+                            app:animationDuration="1500"
+                            app:indicatorColor="@color/colorPrimary"
+                            app:indicatorHeight="2"
+                            app:indicatorRadius="1"
+                            app:interval="160"
+                            app:layout_constraintBottom_toTopOf="@+id/constraintLayout9"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout21" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnCancel1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/round_red_corner"
+                                android:fontFamily="@font/quicksand"
+                                android:letterSpacing="0.2"
+                                android:text="@string/cancel"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/btnSubmitButton1"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnSubmitButton1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/ripple_green"
+                                android:fontFamily="@font/quicksand"
+                                android:letterSpacing="0.2"
+                                android:text="@string/okay"
+                                android:textColor="@color/White"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/btnCancel1"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

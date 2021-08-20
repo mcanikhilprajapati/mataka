@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.45" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintProfile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingBottom="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/profile_screen_bg_mask"
+                app:layout_constraintBottom_toTopOf="@+id/guideline">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_loading_image"
+                    app:civ_border_color="@color/Gray"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="0.5dp"
+                    app:civ_circle_background_color="@color/White"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintWidth_percent="0.3" />
+
+                <ir.alirezabdn.wp7progress.WP10ProgressBar
+                    android:id="@+id/wp10progressBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:animationDuration="1500"
+                    app:indicatorColor="@color/colorPrimary"
+                    app:indicatorHeight="4"
+                    app:indicatorRadius="2"
+                    app:interval="160"
+                    app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImage"
+                    app:layout_constraintStart_toStartOf="@+id/profileImage"
+                    app:layout_constraintTop_toTopOf="@+id/profileImage" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/ic_camera_white"
+                    app:fabSize="mini"
+                    app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                    app:layout_constraintEnd_toEndOf="@+id/profileImage"
+                    app:tint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblProfileName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/alegreya_sc"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5dp"
+                    android:text="- - -"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/profileImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblProfilePhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5dp"
+                    android:text="- - -"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/profileImage"
+                    app:layout_constraintTop_toBottomOf="@+id/lblProfileName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/LightBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintProfile">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblFunds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sc"
+                    android:gravity="start"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/funds"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal|center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintProfile" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearBlue">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:visibility="gone"
+                    android:id="@+id/btnAddFunds1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:background="@drawable/ripple_light_red"
+                    android:fontFamily="@font/alegreya_sc"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/add_funds"
+                    android:textAllCaps="false"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btnWithdrawFunds1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bottom_shadow_gradient"
+                    app:layout_constraintEnd_toEndOf="@+id/btnAddFunds1"
+                    app:layout_constraintStart_toStartOf="@+id/btnAddFunds1"
+                    app:layout_constraintTop_toBottomOf="@+id/btnAddFunds1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:visibility="gone"
+                    android:id="@+id/btnWithdrawFunds1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:background="@drawable/ripple_light_red"
+                    android:fontFamily="@font/alegreya_sc"
+                    android:padding="10dp"
+                    android:text="@string/withdraw_funds"
+                    android:textAllCaps="false"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnAddFunds1"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view34"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnAddFunds1"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view34">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintWinning"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bottom_shadow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblWinningAmountGraph"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand"
+                            android:text="@string/add_funds"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgWinningGraph"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgWinningGraph"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btnAddFunds"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/deposit_amount" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnAddFunds"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintBonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bottom_shadow"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblBonuses"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand"
+                            android:text="@string/withdraw_funds"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgBonus"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgBonus"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btnWithdrawFunds"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/withdraw_img" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnWithdrawFunds"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintAccountStatements"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bottom_shadow"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblAccountStatements"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand"
+                            android:text="@string/account_statement"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgAccountStatements"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgAccountStatements"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btnShowAccountStatements"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/bank_statement_img" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnShowAccountStatements"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintBankDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bottom_shadow"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblBankDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand"
+                            android:text="@string/bank_details"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgBankDetails"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgBankDetails"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btnShowBankDetails"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/bank_img" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnShowBankDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    
+</LinearLayout>
+     

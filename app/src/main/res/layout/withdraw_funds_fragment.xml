@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <ir.alirezabdn.wp7progress.WP7ProgressBar
+                android:id="@+id/wp7progressBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:animationDuration="2000"
+                app:indicatorColor="@color/colorPrimaryDark"
+                app:indicatorHeight="7"
+                app:indicatorRadius="5"
+                app:interval="100"
+                app:layout_constraintBottom_toTopOf="@+id/lblWithdrawFunds"
+                app:layout_constraintEnd_toEndOf="@+id/lblWithdrawFunds"
+                app:layout_constraintStart_toStartOf="@+id/lblWithdrawFunds"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblWithdrawFunds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/alegreya_sc"
+                android:gravity="start"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblWithdrawFunds">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/yourWinnings"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/your_winning"
+                        android:textColor="@color/Gray"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/lblRsSymbol"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblRs"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="- - -"
+                        android:textColor="@color/Gray"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/lblRsSymbol"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <View
+                        android:id="@+id/view6"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblRs" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/lblAddMoneyImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:srcCompat="@drawable/add_fund_image"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblRs" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblAddMoney"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:fontFamily="@font/quicksand"
+                        android:gravity="start"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/add_cash_to_matka_balance"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/lblAddMoneyImage"
+                        app:layout_constraintTop_toBottomOf="@+id/lblRs" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblWalletBalance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:fontFamily="@font/alegreya_sc"
+                        android:gravity="center"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/enter_amountt"
+                        android:textColor="@color/Gray"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblAddMoneyImage" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblRs1"
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:lineSpacingExtra="5dp"
+                        android:textColor="@color/Black"
+                        android:textSize="40sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblWalletBalance" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblRsSymbol"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/helvetica"
+                        android:gravity="end"
+                        android:lineSpacingExtra="5dp"
+                        android:text="₹"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/yourWinnings"
+                        app:layout_constraintEnd_toEndOf="@+id/lblRs"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblEnterAnAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:gravity="start"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/enter_the_amount"
+                        android:textColor="@color/Gray"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/constraintLayout10"
+                        app:layout_constraintStart_toStartOf="@+id/constraintLayout10"
+                        app:layout_constraintTop_toBottomOf="@+id/lblRs1" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout10"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/view_editboxshadow"
+                        app:layout_constraintEnd_toEndOf="@+id/btnWithdrawRequest"
+                        app:layout_constraintStart_toStartOf="@+id/btnWithdrawRequest"
+                        app:layout_constraintTop_toBottomOf="@+id/lblRs1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPhone"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_money" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/txtEnterAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@null"
+                            android:fontFamily="@font/helvetica"
+                            android:hint="@string/minimum_amount"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="0dp"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnWithdrawRequest"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/ripple_red"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:text="@string/withdraw_now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/card"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/card"
+                app:layout_constraintTop_toBottomOf="@+id/card">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblMinimumWithdrawal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/minimum_withdrawal"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/note"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblMinimumWithdrawal" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/drop_shadow"
+                    app:layout_constraintEnd_toEndOf="@+id/lblNote"
+                    app:layout_constraintStart_toStartOf="@+id/lblNote"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNote" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgTick"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblNote1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/lblNote1"
+                    app:srcCompat="@drawable/ic_filled_circle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblNote1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/withdrawal_request_can_be_accepted_anytime"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgTick"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgTick2"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblNote2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/lblNote2"
+                    app:srcCompat="@drawable/ic_filled_circle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblNote2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/the_amount_will_be_credited_to_your_bank_within_4_hours"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgTick"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNote1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgTick3"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblNote3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/lblNote3"
+                    app:srcCompat="@drawable/ic_filled_circle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblNote3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/mont_semi_bold"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/withdraw_is_not_applicable_on_sundays_and_holidays"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgTick"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNote2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

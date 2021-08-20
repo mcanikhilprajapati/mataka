@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/hello"
+        android:checkableBehavior="single">
+
+        <item android:title="@string/personal_panel">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_home"
+                        android:icon="@drawable/ic_home"
+                        android:title="@string/home" />
+                    <item
+                        android:id="@+id/nav_my_profile"
+                        android:icon="@drawable/ic_user"
+                        android:title="@string/my_profile" />
+                    <item
+                        android:id="@+id/nav_account_statement"
+                        android:icon="@drawable/ic_statement"
+                        android:title="@string/account_statement" />
+                    <item
+                        android:id="@+id/nav_bidding_history"
+                        android:icon="@drawable/ic_bidding_history"
+                        android:title="@string/bidding_history" />
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="@string/funds">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_add_funds"
+                        android:icon="@drawable/ic_add_funds"
+                        android:title="@string/add_funds" />
+                    <item
+                        android:id="@+id/nav_withdraw_funds"
+                        android:icon="@drawable/ic_withdraw"
+                        android:title="@string/withdraw_funds" />
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="@string/help_and_support">
+            <menu>
+                <group android:checkableBehavior="single">
+<!--                    <item-->
+<!--                        android:id="@+id/nav_how_to_play"-->
+<!--                        android:icon="@drawable/ic_play_button"-->
+<!--                        android:title="@string/how_to_play" />-->
+                    <item
+                        android:id="@+id/nav_game_rates"
+                        android:icon="@drawable/ic_game_rates"
+                        android:title="@string/game_rates" />
+                    <item
+                        android:id="@+id/nav_notice_board"
+                        android:icon="@drawable/ic_notice_board"
+                        android:title="@string/notice_boards" />
+                    <item
+                        android:id="@+id/nav_invite_and_earn"
+                        android:icon="@drawable/ic_invite_and_earn"
+                        android:title="@string/invite_and_earn" />
+                    <item
+                        android:id="@+id/nav_contact_us"
+                        android:icon="@drawable/ic_contact_us"
+                        android:title="@string/contact_us" />
+                    <item
+                        android:id="@+id/nav_sign_out"
+                        android:icon="@drawable/ic_logout"
+                        android:title="@string/sign_out" />
+                </group>
+            </menu>
+        </item>
+
+    </group>
+
+</menu>

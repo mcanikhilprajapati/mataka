@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/traknpay.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f360f4c2a3c88cf415a0aa79f77729d2/jetified-traknpay/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f360f4c2a3c88cf415a0aa79f77729d2/jetified-traknpay/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f360f4c2a3c88cf415a0aa79f77729d2/jetified-traknpay/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

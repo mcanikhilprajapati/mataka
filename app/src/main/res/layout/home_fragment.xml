@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_weight="1"
+        app:autoPlay="true"
+        android:visibility="gone"
+        app:autoPlayDelay="4000"
+        app:carouselBackground="@color/white"
+        app:carouselType="BLOCK"
+        app:imageScaleType="fitXY"
+        app:imageViewId="@id/image_view"
+        app:itemLayout="@layout/custom_item_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:nextButtonId="@id/custom_btn_next"
+        app:nextButtonLayout="@layout/custom_next_button_layout"
+        app:nextButtonMargin="24dp"
+        app:previousButtonId="@id/custom_btn_previous"
+        app:previousButtonLayout="@layout/custom_previous_button_layout"
+        app:previousButtonMargin="24dp"
+        app:scaleOnScroll="true"
+        app:showBottomShadow="false"
+        app:showCaption="true"
+        app:showIndicator="true"
+        app:showNavigationButtons="false"
+        app:showTopShadow="false" />
+
+<!--    <View-->
+<!--        android:id="@+id/view6"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="3dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:background="@drawable/drop_shadow"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/carousel"-->
+<!--        app:layout_constraintWidth_percent="0.9" />-->
+
+    <!--<androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMarket"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_crimson_corner"
+        android:fontFamily="@font/alegreya_sc"
+        android:padding="10dp"
+        android:text="@string/market"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnRatanStarlineGames"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+    <com.romainpiel.shimmer.ShimmerButton
+        android:id="@+id/btnRatanStarlineGames"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/alegreya_sc"
+        android:padding="10dp"
+        android:text="@string/ratan_starline_games"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnMarket"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />-->
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/viewpagertab"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stl_clickable="true"
+        app:stl_defaultTabBackground="?attr/selectableItemBackground"
+        app:stl_defaultTabTextAllCaps="false"
+        app:stl_defaultTabTextColor="#707070"
+        app:stl_defaultTabTextHorizontalPadding="16dp"
+        app:stl_defaultTabTextMinWidth="0dp"
+        app:stl_defaultTabTextSize="@dimen/_12sdp"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerColor="@color/white"
+        app:stl_dividerThickness="1dp"
+        app:stl_drawDecorationAfterTab="false"
+        app:stl_indicatorAlwaysInCenter="false"
+        app:stl_indicatorColor="@color/colorPrimary"
+        app:stl_indicatorCornerRadius="2dp"
+        app:stl_indicatorGravity="bottom"
+        app:stl_indicatorInFront="false"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorThickness="4dp"
+        app:stl_indicatorWidth="auto"
+        app:stl_indicatorWithoutPadding="false"
+        app:stl_overlineColor="#4D000000"
+        app:stl_overlineThickness="0dp"
+        app:stl_titleOffset="24dp"
+        app:stl_underlineColor="#4D000000"
+        app:stl_underlineThickness="1dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/viewpagertab"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewpagertab" />
+
+    <!--<View
+        android:id="@+id/view7"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_margin="1000dp"
+        android:background="@drawable/drop_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <FrameLayout
+        android:id="@+id/frameHome"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

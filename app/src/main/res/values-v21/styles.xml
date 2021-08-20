@@ -1,0 +1,135 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionMenuTextColor">@color/White</item>
+        <item name="android:actionOverflowButtonStyle">@style/dots</item>
+
+        <!-- Custom Theme Elements -->
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <item name="android:windowDisablePreview">true</item>
+
+    </style>
+
+    <style name="dots">
+        <item name="android:src">@drawable/ic_3_dots</item>
+    </style>
+
+    <!-- Animating Activities While Switching-->
+    <style name="ActivityAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <!-- Overlays -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Theme Setting Only For Drawer -->
+    <style name="DrawerTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!--&lt;!&ndash; Toolbar Theme &ndash;&gt;
+    <style name="myToolbarTHeme">
+        &lt;!&ndash; Style For Toolbar &ndash;&gt;
+        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
+        <item name="toolbarNavigationButtonStyle">@style/CustomToolbarButtonStyle</item>
+        <item name="actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/CustomActionMode</item>
+        <item name="actionModeCloseButtonStyle">@style/CustomModeButtonStyle</item>
+        <item name="android:colorControlNormal">@color/White</item>
+    </style>-->
+
+    <!--&lt;!&ndash; Custom Toolbar &ndash;&gt;
+    <style name="CustomToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="maxButtonHeight">48dp</item>
+        <item name="android:paddingLeft">@dimen/toolbar_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/toolbar_horizontal_padding</item>
+        <item name="contentInsetStart">@dimen/first_keyline</item>
+    </style>
+
+    <style name="CustomToolbarButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+    <style name="CustomOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="CustomActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="android:paddingLeft">@dimen/toolbar_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/toolbar_horizontal_padding</item>
+    </style>
+
+    <style name="CustomModeButtonStyle" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:layout_marginRight">20dp</item>
+    </style>-->
+
+    <!--Text Size Of Drawer Items-->
+    <style name="nav_menu_text_appearance" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/alegreya_sc</item>
+    </style>
+    <style name="ThemeOverlay.titleColor" parent="">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorSecondary">@color/Black</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingStart">6dp</item>
+        <item name="tabPaddingEnd">6dp</item>
+        <item name="tabBackground">@drawable/tab_selected</item>
+        <item name="tabTextAppearance">@style/AppTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
+
+    <style name="AppTabLayoutTb" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingStart">6dp</item>
+        <item name="tabPaddingEnd">6dp</item>
+        <item name="tabBackground">@drawable/tab_selected</item>
+        <item name="tabTextAppearance">@style/AppTabTextAppearanceTab</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
+    <!-- for text -->
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/mont_semi_bold</item>
+    </style>
+
+    <style name="AppTabTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+    </style>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Instant_Online_Matka.iml" filepath="$PROJECT_DIR$/.idea/modules/Instant_Online_Matka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Instant_Online_Matka.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Instant_Online_Matka.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/otpview/Instant_Online_Matka.otpview.iml" filepath="$PROJECT_DIR$/.idea/modules/otpview/Instant_Online_Matka.otpview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/traknpay/Instant_Online_Matka.traknpay.iml" filepath="$PROJECT_DIR$/.idea/modules/traknpay/Instant_Online_Matka.traknpay.iml" />
+    </modules>
+  </component>
+</project>

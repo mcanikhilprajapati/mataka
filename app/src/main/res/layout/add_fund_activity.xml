@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/titlebar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/icon_back_click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_title_game_name2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/mont_semi_bold"
+                android:text="@string/wallet"
+                android:textAlignment="textStart"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_bell"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_not_number"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="start"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/item_notification_count"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="- - -"
+                android:textColor="@color/White"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+                app:layout_constraintStart_toStartOf="@+id/imgNotification" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNotification"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_Wallet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/mont_semi_bold"
+                android:text="- - -"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnNotification"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWallet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_wallet"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/toolbar_Wallet"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnWallet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/toolbar_Wallet"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintHide"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/drop_shadow"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lblAddMoneyImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/add_fund_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblAddMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/quicksand"
+            android:gravity="start"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/add_cash_to_matka_balance"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lblAddMoneyImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblMininmumBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/mont_semi_bold"
+            android:gravity="start"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/amount_to_add"
+            android:textColor="@color/Gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblAddMoneyImage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout10"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/view_editboxshadow"
+            app:layout_constraintEnd_toEndOf="@+id/lblMininmumBalance"
+            app:layout_constraintStart_toStartOf="@+id/lblMininmumBalance"
+            app:layout_constraintTop_toBottomOf="@+id/lblMininmumBalance">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_money" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/txtEnterAmount"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:fontFamily="@font/helvetica"
+                android:hint="@string/enter_the_amount"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout10"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout10"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRequestFiveHundred"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/view_editboxshadow"
+                android:fontFamily="@font/alegreya_sc"
+                android:text="₹ 500"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/btnRequestOneThousand"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRequestOneThousand"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/view_editboxshadow"
+                android:fontFamily="@font/alegreya_sc"
+                android:text="₹ 1000"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/btnRequestOneThousandFiveHundred"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnRequestFiveHundred"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRequestOneThousandFiveHundred"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/view_editboxshadow"
+                android:fontFamily="@font/alegreya_sc"
+                android:text="₹ 1500"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnRequestOneThousand"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblMininmumBalanceWarning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/mont_semi_bold"
+            android:gravity="start"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/minimum_deposit"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout22"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout22"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout22" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/lblMininmumBalanceWarning"
+            app:layout_constraintStart_toStartOf="@+id/lblMininmumBalanceWarning"
+            app:layout_constraintTop_toBottomOf="@+id/lblMininmumBalanceWarning">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblMininmumBalanceNoteRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/mont_semi_bold"
+            android:gravity="start"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/note"
+            android:textAlignment="center"
+            android:textColor="@color/Red"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/lblMininmumBalanceNote"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblMininmumBalanceNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/mont_semi_bold"
+            android:gravity="start"
+            android:lineSpacingExtra="5dp"
+            android:lines="2"
+            android:text="@string/note_message"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lblMininmumBalanceNoteRed"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout24"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout24"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintHide" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHowToAddFund"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_red_corner"
+        android:fontFamily="@font/alegreya_sc"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:text="@string/how_to_add_fund"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        android:textSize="@dimen/_14sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ir.alirezabdn.wp7progress.WP10ProgressBar
+        android:id="@+id/wp10progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:animationDuration="1500"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorHeight="7"
+        app:indicatorRadius="5"
+        app:interval="160"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

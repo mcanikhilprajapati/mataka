@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lblSendMoneyFromWallet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/sending_money_from_wallet_to"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lblAccountName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:text="- - -"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSendMoneyFromWallet" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lblAccountNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:text="- - -"
+        android:textColor="#8D8D8D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif-light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAccountName" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@+id/lblAccountNumber"
+        app:layout_constraintStart_toStartOf="@+id/lblAccountNumber"
+        app:layout_constraintTop_toBottomOf="@+id/lblAccountNumber" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblWithdrawalAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/withdrawal_amount"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblCharges"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/charges_2"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWithdrawalAmount" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="#D3D3D3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCharges" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblTotalWithdrawalAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/total_withdrawal_amount"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblChargesAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="- - -"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWithdrawalAmountAnswer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblWithdrawalAmountAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - -"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblTotalWithdrawalAmountAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="- - -"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintBottom_toTopOf="@+id/view4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#D3D3D3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lblCharges"
+            app:layout_constraintTop_toBottomOf="@+id/lblTotalWithdrawalAmount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblByProceeding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/by_proceeding_i_agree_to_the_additional_charges_applicable_on_this_transaction"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:fontFamily="sans-serif-light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ripple_red"
+            android:text="@string/p_r_o_c_e_e_d"
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblByProceeding" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imgbtnEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_edit_red"
+        app:layout_constraintBottom_toTopOf="@+id/lblAccountName"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

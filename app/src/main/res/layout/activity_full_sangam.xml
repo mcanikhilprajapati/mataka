@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_mask"
+    tools:context=".view.activity.games.market.gametypes.FullSangamActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/titlebar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/titlebar_bg">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/icon_back_click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_title_game_name5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/quicksand"
+                android:text="- - -"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                app:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:visibility="gone"
+                android:id="@+id/imgNotification"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_bell"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
+                android:id="@+id/toolbar_not_number"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="start"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/item_notification_count"
+                android:fontFamily="@font/helvetica"
+                android:gravity="center"
+                android:text="- - -"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+                app:layout_constraintStart_toStartOf="@+id/imgNotification" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:visibility="gone"
+                android:id="@+id/btnNotification"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_Wallet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/mont_semi_bold"
+                android:text="- - -"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnNotification"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWallet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/wallet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/toolbar_Wallet"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnWallet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/toolbar_Wallet"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintSingleGame"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_margin="25dp"
+                        android:id="@+id/constraintData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/constraintSingleGame">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblStatusAnswer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="- - -"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.cardview.widget.CardView
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@color/colorPrimary"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/lblStatusAnswer1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif"
+                                        android:text="- - -"
+                                        android:textColor="@color/White"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold|italic"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_begin="230dp" />
+
+                                <View
+                                    android:id="@+id/view7"
+                                    android:layout_width="1dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/Gray"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline4"
+                                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblMarketNameAnswer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/lblNumbersAnswer"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lblNumbersAnswer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:fontFamily="@font/mont_semi_bold"
+                                    android:text="- - -"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/Black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/lblMarketNameAnswer"
+                                    app:layout_constraintVertical_chainStyle="packed" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout18"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout19"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/view7"
+                                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/imgOpenTime"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/lblOpenTime"
+                                        app:layout_constraintEnd_toStartOf="@+id/lblOpenTime"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/lblOpenTime"
+                                        app:srcCompat="@drawable/open_buid_clok" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/lblOpenTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:fontFamily="@font/helvetica"
+                                        android:gravity="center"
+                                        android:text="@string/open_bid"
+                                        android:textColor="@color/Green"
+                                        android:textSize="12sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toEndOf="@+id/imgOpenTime"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/lblOpenTimeAnswer"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:fontFamily="@font/mont_semi_bold"
+                                        android:gravity="center"
+                                        android:text="- - -"
+                                        android:textColor="@color/Black"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lblOpenTime" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout19"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/view7"
+                                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout18">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/imgCloseTime"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/lblClsoeTime"
+                                        app:layout_constraintEnd_toStartOf="@+id/lblClsoeTime"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/lblClsoeTime"
+                                        app:srcCompat="@drawable/close_buid_clock" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/lblClsoeTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:fontFamily="@font/helvetica"
+                                        android:gravity="center"
+                                        android:text="Close Bid"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="12sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toEndOf="@+id/imgCloseTime"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/lblCloseTimeAnswer"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:fontFamily="@font/mont_semi_bold"
+                                        android:gravity="center"
+                                        android:text="- - -"
+                                        android:textColor="@color/Black"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintHorizontal_chainStyle="packed"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lblClsoeTime" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/background_game_list_card"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@+id/constraintDate"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintData">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPhone"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_change" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblChange"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@null"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/change_digits"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnChangeDigits"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintDate"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/background_game_list_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/constraintSearch"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintData">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgDate"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_calendar" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:text="- - -"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Gray"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgDate"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintEnter"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/background_game_list_card"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintDate">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.4" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblOpenPanna"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:text="@string/close_panna"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout10"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/constraintLayout10" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblClosePanna"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:text="@string/open_panna"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout11"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/constraintLayout11" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblPoints"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:text="@string/points"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout12"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/constraintLayout12" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout11"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/background_game_list_card"
+                            app:layout_constraintBottom_toTopOf="@+id/constraintLayout10"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@+id/guideline5"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgDigits"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_single" />
+
+                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                android:id="@+id/txtEnterOpenPanna"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@null"
+                                android:fontFamily="@font/helvetica"
+                                android:hint="@string/enter_panna"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/Black"
+                                android:textSize="16sp"
+                                android:maxLength="3"
+                                android:completionThreshold="0"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imgDigits"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout10"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/background_game_list_card"
+                            app:layout_constraintBottom_toTopOf="@+id/constraintLayout12"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@+id/guideline5"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgPanna"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_single" />
+
+                            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                android:id="@+id/txtEnterClosePanna"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@null"
+                                android:fontFamily="@font/helvetica"
+                                android:hint="@string/enter_panna"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/Black"
+                                android:textSize="16sp"
+                                android:maxLength="3"
+                                android:completionThreshold="0"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imgPanna"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout12"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/background_game_list_card"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@+id/guideline5"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgPoints"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_money"
+                                app:tint="@color/colorPrimary" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/txtEnterPoints"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@null"
+                                android:fontFamily="@font/helvetica"
+                                android:hint="@string/enter_points"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingEnd="0dp"
+                                android:textColor="@color/Black"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imgPoints"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAdd"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@drawable/ripple_red"
+                        android:fontFamily="@font/alegreya_sc"
+                        android:text="@string/add"
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintEnter" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/background_game_list_card"
+                        android:padding="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnAdd">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblSangam"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:gravity="center"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:text="@string/sangam"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/lblSangamPoints"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblSangamPoints"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:text="@string/points"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/lblGameTypeinBox"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/lblSangam"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblGameTypeinBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:text="@string/type"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/lblOption"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/lblSangamPoints"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/lblOption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mont_semi_bold"
+                            android:gravity="center"
+                            android:text="@string/option"
+                            android:textAllCaps="true"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/lblGameTypeinBox"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/LinerLayoutContiner"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblTotalPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:text="@string/total_points"
+                        android:textAllCaps="true"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/LinerLayoutContiner" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblTotalPointsAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/mont_semi_bold"
+                        android:text="- - -"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnProceed"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ripple_red"
+                        android:fontFamily="@font/quicksand"
+                        android:text="@string/submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/White"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/no_records" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/alegreya_sc"
+            android:gravity="center"
+            android:text="@string/no_game_data_found_at_this_moment"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_crimson_corner"
+            android:fontFamily="@font/helvetica"
+            android:letterSpacing="0.2"
+            android:text="@string/retry"
+            android:textColor="@color/White"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <ir.alirezabdn.wp7progress.WP10ProgressBar
+        android:id="@+id/wp10progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:animationDuration="1500"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorHeight="7"
+        app:indicatorRadius="5"
+        app:interval="160"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
