@@ -94,7 +94,7 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
             ft.remove(prev)
         }
         dialogFragment.setCancelable(true)
-        dialogFragment.show(ft, "dialog")
+//        dialogFragment.show(ft, "dialog")
 
         btnNotification.setSafeOnClickListener {
             startActivity(Intent(context, NotificationActivity::class.java))
