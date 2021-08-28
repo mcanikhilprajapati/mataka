@@ -10,6 +10,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2e0eb4bdee7a445f3ea09e0a2ace715/jetified-wp7progressbar-1.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d7a0022a31285bde182760dc5e2b890/jetified-wp7progressbar-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d7a0022a31285bde182760dc5e2b890/jetified-wp7progressbar-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d7a0022a31285bde182760dc5e2b890/jetified-wp7progressbar-1.0.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

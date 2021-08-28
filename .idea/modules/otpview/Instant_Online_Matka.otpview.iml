@@ -33,6 +33,10 @@
     <content url="file://$MODULE_DIR$/../../../otpview">
       <sourceFolder url="file://$MODULE_DIR$/../../../otpview/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../otpview/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../otpview/build/generated/res/resValues/debug" type="java-resource" />

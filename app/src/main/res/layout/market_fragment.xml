@@ -167,7 +167,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="@+id/txtGameName"
                 app:layout_constraintTop_toBottomOf="@+id/txtGameName"
-                android:text="@string/ratan_starline_games" />
+                android:text="Starline" />
 
         </LinearLayout>
 
