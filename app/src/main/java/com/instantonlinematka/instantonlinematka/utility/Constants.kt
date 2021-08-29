@@ -54,7 +54,7 @@ object Constants {
     const val PG_NAME = "LOKESH"
     const val PG_PHONE = "9731885622"
     var PG_ORDER_ID = ""
-    const val PG_DESCRIPTION = "This is for Online Matka Payment"
+    const val PG_DESCRIPTION = "This is for matka wala Payment"
     const val PG_CITY = "Bengaluru"
     const val PG_STATE = "Karnataka"
     const val PG_ADD_1 = "Marathalli"

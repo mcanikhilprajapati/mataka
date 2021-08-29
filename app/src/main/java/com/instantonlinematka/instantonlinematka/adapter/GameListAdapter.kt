@@ -100,10 +100,10 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
             holder.lblBiddingStatus.text = "Market Closed"
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
-                    context, R.color.colorPrimary
+                    context, R.color.Red
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_blue_bg)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_red_bg)
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(
 //                    context,
@@ -118,7 +118,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                     context, R.color.Green
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_red_bg)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_green_bg)
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(
 //                    context,

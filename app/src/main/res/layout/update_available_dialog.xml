@@ -32,7 +32,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/helvetica"
         android:lineSpacingExtra="5dp"
-        android:text="Instant Online Matka recommends to update to the latest version. Please do not close the app during the update process."
+        android:text="Instant matka wala recommends to update to the latest version. Please do not close the app during the update process."
         android:textColor="@color/Black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

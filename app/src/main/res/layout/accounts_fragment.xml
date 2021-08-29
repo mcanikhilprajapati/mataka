@@ -27,13 +27,14 @@
                 android:id="@+id/constraintProfile"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:paddingBottom="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
                 android:background="@drawable/profile_screen_bg_mask"
-                app:layout_constraintBottom_toTopOf="@+id/guideline">
+                android:paddingBottom="@dimen/_10sdp"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profileImage"
@@ -41,16 +42,16 @@
                     android:layout_height="0dp"
                     android:layout_margin="@dimen/_15sdp"
                     android:scaleType="centerCrop"
-                    android:visibility="gone"
                     android:src="@drawable/ic_loading_image"
+                    android:visibility="gone"
                     app:civ_border_color="@color/Gray"
                     app:civ_border_overlay="true"
                     app:civ_border_width="0.5dp"
                     app:civ_circle_background_color="@color/White"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintWidth_percent="0.3" />
 
                 <ir.alirezabdn.wp7progress.WP10ProgressBar
@@ -84,16 +85,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:fontFamily="@font/alegreya_sc"
-                    android:visibility="gone"
                     android:gravity="center"
                     android:lineSpacingExtra="5dp"
                     android:text="- - -"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/profileImage"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/lblProfilePhone"
@@ -103,11 +104,11 @@
                     android:fontFamily="@font/mont_semi_bold"
                     android:gravity="center"
                     android:lineSpacingExtra="5dp"
-                    android:visibility="gone"
                     android:text="- - -"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
+                    android:visibility="gone"
                     app:layout_constraintStart_toEndOf="@+id/profileImage"
                     app:layout_constraintTop_toBottomOf="@+id/lblProfileName" />
 
