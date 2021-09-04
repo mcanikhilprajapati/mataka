@@ -159,24 +159,24 @@
             android:id="@+id/constraintLayout12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/round_red_corner_2"
-            android:orientation="horizontal" >
+            android:gravity="center"
+            android:orientation="horizontal">
 
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lblPlayGame"
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:text="Closed"
                 android:layout_marginLeft="5dp"
                 android:gravity="center"
                 android:padding="4dp"
+                android:text="Closed"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10sdp"
                 android:visibility="visible" />

@@ -201,7 +201,7 @@ class BonusFragment : Fragment() {
                             if (wallet.isEmpty()) {
                                 (activity as DrawerActivity).toolbar_Wallet.text = "- - -"
                             } else {
-                                ((activity as DrawerActivity).toolbar_Wallet.setText(data.user.wallet))
+                                ((activity as DrawerActivity).toolbar_Wallet.setText("₹"+data.user.wallet))
                             }
                         } catch (e: Exception) {
                         }

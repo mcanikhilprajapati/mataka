@@ -10,6 +10,12 @@ import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.model.RatanBidHistoryData
 import com.instantonlinematka.instantonlinematka.utility.ConvertTime
 import kotlinx.android.synthetic.main.item_bid_history_new.view.*
+import android.text.Html
+
+import android.R.id
+
+
+
 
 class RatanBidHistoryAdapter(val context: Context, val biddingList: ArrayList<RatanBidHistoryData>) :
     RecyclerView.Adapter<RatanBidHistoryAdapter.BiddingViewHolder>() {
@@ -24,6 +30,7 @@ class RatanBidHistoryAdapter(val context: Context, val biddingList: ArrayList<Ra
         var lblPointsAnswer = itemView.lblPointsAnswer
         // var lblBidTimeAnswer = itemView.lblBidTimeAnswer
         var lblYouWonAnswer = itemView.lblYouWonAnswer
+        var lblYouWonAnswerAmount = itemView.lblYouWonAnswerAmount
         var imgEmoji = itemView.imgEmoji
 
 //        var lblMarketNameAnswer = itemView.lblMarketNameAnswer
@@ -66,43 +73,49 @@ class RatanBidHistoryAdapter(val context: Context, val biddingList: ArrayList<Ra
 //        val timeinPM = ConvertTime.ConvertTimeToPM(data.bided_on_time!!)
 //        holder.lblBidTimeAnswer.setText(timeinPM)
         if (data.status!!.contentEquals("1")) {
-            holder.lblYouWonAnswer.text = context.getString(R.string.congratulations) + " " + data.won_amount
+
+             holder.lblYouWonAnswer.text = context.getString(R.string.congratulations)
+            holder.lblYouWonAnswerAmount.visibility =  View.VISIBLE
+             holder.lblYouWonAnswerAmount.text =  data.won_amount
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.Green
+                    R.color.Gray
                 )
             )
-            holder.imgEmoji.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_won))
+            holder.imgEmoji.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.win))
         } else if (data.status.contentEquals("2")) {
+            holder.lblYouWonAnswerAmount.visibility =  View.GONE
             holder.lblYouWonAnswer.text = context.getString(R.string.results_not_announced)
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.colorPrimary
+                    R.color.Gray
                 )
             )
             holder.imgEmoji.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.ic_no_results
+                    R.drawable.not_announced
                 )
             )
         } else if (data.status.contentEquals("0")) {
             holder.lblYouWonAnswer.text = context.getString(R.string.better_luck_next_time)
+            holder.lblYouWonAnswerAmount.visibility =  View.GONE
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.colorPrimary
+                    R.color.Gray
                 )
             )
             holder.imgEmoji.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.ic_lost
+                    R.drawable.loss
                 )
             )
         }
+
     }
 
     override fun getItemCount(): Int = biddingList.size

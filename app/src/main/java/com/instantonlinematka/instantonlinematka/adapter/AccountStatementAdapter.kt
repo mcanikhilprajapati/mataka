@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.model.AccountStatementData
 import com.instantonlinematka.instantonlinematka.utility.ConvertTime
-import kotlinx.android.synthetic.main.item_account_statement.view.*
+import kotlinx.android.synthetic.main.item_account_statement_new.view.*
 
 class AccountStatementAdapter(
     val context: Context,
@@ -40,7 +40,7 @@ class AccountStatementAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccStatementViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_account_statement, parent, false)
+            .inflate(R.layout.item_account_statement_new, parent, false)
         return AccStatementViewHolder(view)
     }
 
@@ -80,38 +80,49 @@ class AccountStatementAdapter(
         if (status.contentEquals(REFERRAL_FUND)) {
 
             holder.Amount.setText("₹ " + data.amount)
-            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
             holder.Status.setText(context.getString(R.string.referral_fund_added))
             holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
-            holder.GameName.visibility = View.GONE
+            holder.Status.visibility = View.GONE
+            holder.GameName.visibility = View.VISIBLE
             holder.CategoryName.visibility = View.GONE
+
+            holder.GameName.setText(context.getString(R.string.referral_fund_added))
         }
         else if (status.contentEquals(BONUS)) {
 
             holder.Amount.setText("₹ " + data.amount)
-            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
             holder.Status.setText(context.getString(R.string.bonus_points))
             holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
-            holder.GameName.visibility = View.GONE
+            holder.Status.visibility = View.GONE
+            holder.GameName.visibility = View.VISIBLE
             holder.CategoryName.visibility = View.GONE
+            holder.GameName.setText(context.getString(R.string.bonus_points))
         }
         else if (status.contentEquals(ADD_FUND) || status.contentEquals(BID_POINT)) {
 
             holder.Amount.setText("₹ " + data.amount)
-            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
             holder.Status.setText(context.getString(R.string.points_added_in_the_wallet))
             holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
-            holder.GameName.visibility = View.GONE
+
+            holder.Status.visibility = View.GONE
+            holder.GameName.visibility = View.VISIBLE
             holder.CategoryName.visibility = View.GONE
+            holder.GameName.setText(context.getString(R.string.points_added_in_the_wallet))
         }
         else if (status.contentEquals(WITHDRAW_FUND)) {
 
             holder.Amount.setText("₹ " + data.amount)
-            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.colorPrimary))
+//            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.colorPrimary))
             holder.Status.setText(context.getString(R.string.your_withdrawal_amount))
             holder.Status.setTextColor(ContextCompat.getColor(context, R.color.colorPrimary))
-            holder.GameName.visibility = View.GONE
+
+            holder.Status.visibility = View.GONE
+            holder.GameName.visibility = View.VISIBLE
             holder.CategoryName.visibility = View.GONE
+            holder.GameName.setText(context.getString(R.string.your_withdrawal_amount))
         }
         else if (status.contentEquals(WON_AMOUNT)) {
 
@@ -126,7 +137,7 @@ class AccountStatementAdapter(
                             "   \u00b7   " + "₹ " + data.biddata.bid_amount)
                 }
                 holder.Amount.setText("₹ " + data.amount)
-                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
                 holder.Status.setText(context.getString(R.string.you_won_this_game))
                 holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
              //   holder.lblGameName.visibility = View.VISIBLE
@@ -139,7 +150,7 @@ class AccountStatementAdapter(
                 holder.CategoryName.setText(data.biddata.open_panna + "-" + data.biddata.close_panna +
                         "   \u00b7   " + "₹ " + data.biddata.bid_amount)
                 holder.Amount.setText("₹ " + data.amount)
-                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
                 holder.Status.setText(context.getString(R.string.you_won_this_game))
                 holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
               //  holder.lblGameName.visibility = View.VISIBLE
@@ -152,7 +163,7 @@ class AccountStatementAdapter(
                 holder.CategoryName.setText(data.biddata.open_panna + "-" + data.biddata.close_panna +
                         "   \u00b7   " + "₹ " + data.biddata.bid_amount)
                 holder.Amount.setText("₹ " + data.amount)
-                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
                 holder.Status.setText(context.getString(R.string.you_won_this_game))
                 holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
               //  holder.lblGameName.visibility = View.VISIBLE
@@ -163,7 +174,7 @@ class AccountStatementAdapter(
             else {
                 holder.CategoryName.setText(data.biddata.number + "  \u00b7  " + "₹ " + data.biddata.bid_amount)
                 holder.Amount.setText("₹ " + data.amount)
-                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
+//                holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.Green))
                 holder.Status.setText(context.getString(R.string.you_won_this_game))
                 holder.Status.setTextColor(ContextCompat.getColor(context, R.color.Green))
              //   holder.lblGameName.visibility = View.VISIBLE
@@ -175,11 +186,15 @@ class AccountStatementAdapter(
         else if (status.contentEquals(REFUND)) {
 
             holder.Amount.setText("₹ " + data.amount)
-            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.DarkYellow))
+//            holder.Amount.setTextColor(ContextCompat.getColor(context, R.color.DarkYellow))
             holder.Status.setText(context.getString(R.string.refund_points))
             holder.Status.setTextColor(ContextCompat.getColor(context, R.color.DarkYellow))
-            holder.GameName.setVisibility(View.GONE)
-            holder.CategoryName.setVisibility(View.GONE)
+
+
+            holder.Status.visibility = View.GONE
+            holder.GameName.visibility = View.VISIBLE
+            holder.CategoryName.visibility = View.GONE
+            holder.GameName.setText(context.getString(R.string.refund_points))
         }
 
     }

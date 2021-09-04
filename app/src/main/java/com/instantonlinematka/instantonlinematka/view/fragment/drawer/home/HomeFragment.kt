@@ -20,6 +20,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.tabs.TabLayout
 import com.instantonlinematka.instantonlinematka.BuildConfig
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.databinding.HomeFragmentBinding
@@ -109,6 +110,10 @@ class HomeFragment: Fragment() {
 
         val viewPagerTab = view.findViewById(R.id.viewpagertab) as SmartTabLayout
         viewPagerTab.setViewPager(viewPager)
+
+
+        val tabs = view.findViewById(R.id.tabs) as TabLayout
+        tabs.setupWithViewPager(viewPager)
 
         return view
     }
@@ -365,7 +370,7 @@ class HomeFragment: Fragment() {
                             if (wallet.isEmpty()) {
                                 (activity as DrawerActivity).toolbar_Wallet.text = "- - -"
                             } else {
-                                ((activity as DrawerActivity).toolbar_Wallet.setText(data.user.wallet))
+                                ((activity as DrawerActivity).toolbar_Wallet.setText("₹"+data.user.wallet))
                             }
                         } catch (e: Exception) {
                         }

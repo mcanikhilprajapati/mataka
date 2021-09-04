@@ -232,7 +232,7 @@ class AddFundsActivity : AppCompatActivity() {
         if (wallet.isEmpty()) {
             toolbar_Wallet.text = "- - -"
         } else {
-            toolbar_Wallet.text = wallet
+            toolbar_Wallet.text = "₹"+wallet
         }
         val notification_count = sessionPrefs.getString(Constants.NOTIFICATION_COUNT)
         if (notification_count.isEmpty() || notification_count.toInt() == 0) {
@@ -294,7 +294,7 @@ class AddFundsActivity : AppCompatActivity() {
                     btnHowToAddFund.visibility = View.GONE //
 
                     sessionPrefs.addString(Constants.WALLET, data.user.wallet)
-                    toolbar_Wallet.setText(data.user.wallet)
+                    toolbar_Wallet.setText("₹"+data.user.wallet)
 
                     for (items in data.payment) {
 
