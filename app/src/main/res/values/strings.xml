@@ -115,7 +115,7 @@
     <string name="ratan_starline_game">RATAN STARLINE GAME</string>
     <string name="ratan_starline_bid_history">Bid History</string>
     <string name="ratan_starline_result_history">Result History</string>
-    <string name="terms_and_conditions">Terms and Conds</string>
+    <string name="terms_and_conditions">Terms &amp; Conds</string>
     <string name="game_win_ratio">Game Win Ratio</string>
     <string name="no_starline_games_available_at_this_moment">No starline games available at this moment</string>
     <string name="total_winning_amount_graph">Total Winning Amount Graph</string>
