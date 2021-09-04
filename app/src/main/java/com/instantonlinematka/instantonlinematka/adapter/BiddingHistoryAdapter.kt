@@ -9,7 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.model.BiddingDataByGame
 import com.instantonlinematka.instantonlinematka.utility.ConvertTime
-import kotlinx.android.synthetic.main.item_bid_history.view.*
+import kotlinx.android.synthetic.main.item_bid_history_new.view.*
+import kotlinx.android.synthetic.main.item_bid_history_new.view.imgEmoji
+import kotlinx.android.synthetic.main.item_bid_history_new.view.lblDigitAnswer
+import kotlinx.android.synthetic.main.item_bid_history_new.view.lblMarketNameAnswer
+import kotlinx.android.synthetic.main.item_bid_history_new.view.lblPlayOnAnswer
+import kotlinx.android.synthetic.main.item_bid_history_new.view.lblPointsAnswer
+import kotlinx.android.synthetic.main.item_bid_history_new.view.lblYouWonAnswer
 
 class BiddingHistoryAdapter(val context: Context, val biddingList: ArrayList<BiddingDataByGame>) :
     RecyclerView.Adapter<BiddingHistoryAdapter.BiddingViewHolder>() {
@@ -18,18 +24,18 @@ class BiddingHistoryAdapter(val context: Context, val biddingList: ArrayList<Bid
         
         var lblMarketNameAnswer = itemView.lblMarketNameAnswer
         var lblPlayOnAnswer = itemView.lblPlayOnAnswer
-        var lblPlayOffAnswer = itemView.lblPlayOffAnswer
+        //var lblPlayOffAnswer = itemView.lblPlayOffAnswer
         var lblBidIdAnswer = itemView.lblBidIdAnswer
         var lblDigitAnswer = itemView.lblDigitAnswer
         var lblPointsAnswer = itemView.lblPointsAnswer
-        var lblBidTimeAnswer = itemView.lblBidTimeAnswer
+       // var lblBidTimeAnswer = itemView.lblBidTimeAnswer
         var lblYouWonAnswer = itemView.lblYouWonAnswer
         var imgEmoji = itemView.imgEmoji
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BiddingViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_bid_history, parent, false)
+            .inflate(R.layout.item_bid_history_new, parent, false)
         return BiddingViewHolder(view)
     }
 
@@ -40,13 +46,14 @@ class BiddingHistoryAdapter(val context: Context, val biddingList: ArrayList<Bid
         holder.lblMarketNameAnswer.setText(
             data.game_type_name + "(${data.category_name})"
         )
-        holder.lblPlayOnAnswer.setText(data.bided_on)
-        holder.lblPlayOffAnswer.setText(data.bided_for)
+        val timeinPM = ConvertTime.ConvertTimeToPM(data.bided_on_time!!)
+        holder.lblPlayOnAnswer.setText(data.bided_on+ " "+timeinPM)
+       // holder.lblPlayOffAnswer.setText(data.bided_for)
         holder.lblBidIdAnswer.setText(data.bid_id)
         holder.lblDigitAnswer.setText(data.number)
         holder.lblPointsAnswer.setText(data.bid_amount)
-        val timeinPM = ConvertTime.ConvertTimeToPM(data.bided_on_time!!)
-        holder.lblBidTimeAnswer.setText(timeinPM)
+
+        //holder.lblBidTimeAnswer.setText(timeinPM)
         if (data.status!!.contentEquals("1")) {
             holder.lblYouWonAnswer.text = context.getString(R.string.congratulations) + " " + data.won_amount
             holder.lblYouWonAnswer.setTextColor(

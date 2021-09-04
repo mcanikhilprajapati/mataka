@@ -238,7 +238,7 @@ class MarketFragment : Fragment() {
 
                     binding.linearHome.visibility = View.GONE
                     binding.recyclerView.visibility = View.VISIBLE
-                    binding.txtTodayMarket.visibility= View.VISIBLE
+                    binding.txtTodayMarket.visibility= View.GONE
                 }
 
                 binding.wp10progressBar.hideProgressBar()

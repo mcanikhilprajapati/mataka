@@ -44,7 +44,7 @@ class RatanGameModesAdapter(
 
         holder.GameImage.setImageDrawable(data.gameImage)
         holder.GameName.text = data.gameName
-        holder.GameName.setTextColor(data.gameColor!!)
+//        holder.GameName.setTextColor(data.gameColor!!)
 
         holder.btnGame.setSafeOnClickListener {
             selection(data.gameId!!, data.gameCatId!!, data.gameName!!, data.Status!!,

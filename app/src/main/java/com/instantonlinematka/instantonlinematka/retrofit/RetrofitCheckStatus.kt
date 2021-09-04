@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit
 object RetrofitCheckStatus {
 
     // BASE URL
-    var BASE_URL = "https://biz.traknpay.in/"
+    var BASE_URL = "https://api.innopaytech.com/"
+//    var BASE_URL = "https://biz.traknpay.in/"
 
     private lateinit var logging: HttpLoggingInterceptor
 

@@ -102,12 +102,12 @@ class MarketGameModesActivity : AppCompatActivity() {
 
         val name = sessionPrefs.getString(Constants.BANK_HOLDER_NAME)
 
-        if (name.isEmpty()) {
-            toolbar_title1.visibility = View.GONE
-        } else {
-            toolbar_title1.text = name
-            toolbar_title1.visibility = View.VISIBLE
-        }
+//        if (name.isEmpty()) {
+//            toolbar_title1.visibility = View.GONE
+//        } else {
+//            toolbar_title1.text = name
+//            toolbar_title1.visibility = View.VISIBLE
+//        }
     }
 
     override fun onResume() {
@@ -263,6 +263,9 @@ class MarketGameModesActivity : AppCompatActivity() {
                 OpenBids = responseData.data.open_time
                 CloseBids = responseData.data.close_time
                 CurrentTime = responseData.data.time ?: "- - -"
+
+                toolbar_title1.text = GameName
+                toolbar_title1.visibility = View.VISIBLE
 
                 if (Status!!.contentEquals("0")) {
                     lblStatusAnswer.text = context.getString(R.string.bidding_is_closed_for_today)

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_game_list_card"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <LinearLayout
+          android:id="@+id/layoutRight"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:orientation="vertical">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/constraintLayout11"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginRight="10dp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/lblOpenTime"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:text="@string/open_bids"
+                  android:textColor="@color/Green"
+                  android:textSize="@dimen/_10sdp"
+                  android:textStyle="bold"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/txtOpenTime"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="5dp"
+                  android:gravity="start"
+                  android:text="12 : 15"
+                  android:textColor="@color/Black"
+                  android:textSize="@dimen/_10sdp"
+                  android:textStyle="bold"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toEndOf="@+id/lblOpenTime"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/constraintLayout13"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="7dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="10dp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/lblCloseTime"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+
+                  android:gravity="center"
+                  android:text="@string/close_bids"
+                  android:textColor="@color/Red"
+                  android:textSize="@dimen/_10sdp"
+                  android:textStyle="bold"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/txtCloseTime"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="5dp"
+                  android:gravity="start"
+                  android:text="12 : 15"
+                  android:textColor="@color/Black"
+                  android:textSize="@dimen/_10sdp"
+                  android:textStyle="bold"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toEndOf="@+id/lblCloseTime"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toLeftOf="@id/layoutRight"
+          android:orientation="vertical">
+
+          <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/txtGameName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginRight="10dp"
+              android:gravity="center"
+              android:text="SRIDEVI DAY"
+              android:textColor="@color/black"
+              android:textSize="@dimen/_12sdp"
+              android:textStyle="bold"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/txtNumbers"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginBottom="10dp"
+              android:textColor="@color/Black"
+              android:textSize="@dimen/_12sdp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toStartOf="@+id/guideline3"
+              app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintStart_toStartOf="@+id/txtGameName"
+              app:layout_constraintTop_toBottomOf="@+id/txtGameName"
+              tools:text="445-30-226" />
+
+
+      </LinearLayout>
+  </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_bottom_gray">
+
+        <LinearLayout
+            android:id="@+id/constraintLayout12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_red_corner_2"
+            android:orientation="horizontal" >
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblPlayGame"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="Closed"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPlayStatus"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_play_2" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/constraintLayout12"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtBiddingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Marked Closed"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblStatusTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="-10dp"
+                android:gravity="center"
+                android:text="00:00:00"
+                android:textColor="@color/Red"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

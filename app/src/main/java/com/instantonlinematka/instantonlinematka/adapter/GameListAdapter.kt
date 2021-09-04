@@ -17,7 +17,7 @@ import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
 import com.instantonlinematka.instantonlinematka.view.activity.DrawerActivity
 import com.instantonlinematka.instantonlinematka.view.activity.games.market.MarketGameModesActivity
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
-import kotlinx.android.synthetic.main.item_game_list.view.*
+import kotlinx.android.synthetic.main.item_game_list_final_old.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
@@ -38,14 +38,16 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         val lblOpenTime = itemView.txtOpenTime
         val lblCloseTime = itemView.txtCloseTime
         val lblBiddingStatus = itemView.txtBiddingStatus
+        val lblPlayGame = itemView.lblPlayGame
         val imgPlayButton = itemView.constraintLayout12
-        val btnPlayGame = itemView.btnPlayGame
+        val imgPlayStatus = itemView.imgPlayStatus
+       // val btnPlayGame = itemView.btnPlayGame
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameHolder {
 
         val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_game_list_final, parent, false)
+            .inflate(R.layout.item_game_list_final_old, parent, false)
 
         return GameHolder(v)
     }
@@ -97,13 +99,15 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
 
         if (GameStatus.contentEquals("0")) {
 //            holder.lblBiddingStatus.text = context.getString(R.string.bidding_is_closed_for_today)
+            holder.lblPlayGame.text = "Closed"
             holder.lblBiddingStatus.text = "Market Closed"
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
                     context, R.color.Red
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_red_bg)
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.round_red_corner_2)
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(
 //                    context,
@@ -113,12 +117,14 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         } else if (GameStatus.contentEquals("1")) {
 //            holder.lblBiddingStatus.text = context.getString(R.string.bidding_is_running_for_today)
             holder.lblBiddingStatus.text = "Market Open"
+            holder.lblPlayGame.text = "Play"
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
                     context, R.color.Green
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_green_bg)
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_open)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.round_green_corner_2)
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(
 //                    context,
@@ -128,12 +134,14 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         } else if (GameStatus.contentEquals("6")) {
 //            holder.lblBiddingStatus.text =                context.getString(R.string.bidding_is_running_for_close_bids)
             holder.lblBiddingStatus.text =         "Market Running"
+            holder.lblPlayGame.text = "Play"
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
                     context, R.color.DarkYellow
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_orrange_bg)
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_play_2)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.round_orange_corner_2)
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(
 //                    context,
@@ -147,10 +155,12 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                 context.getString(R.string.bidding_is_running_for_close_bids)
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
-                    context, R.color.DarkYellow
+                    context, R.color.Green
                 )
             )
-            holder.imgPlayButton.setBackgroundResource(R.drawable.btn_orrange_bg)
+            holder.lblPlayGame.text = "Play"
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_open)
+            holder.imgPlayButton.setBackgroundResource(R.drawable.round_green_corner_2)
 
 //            holder.imgPlayButton.setImageDrawable(
 //                ContextCompat.getDrawable(

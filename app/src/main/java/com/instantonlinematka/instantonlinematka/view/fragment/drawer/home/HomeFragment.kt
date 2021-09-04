@@ -99,8 +99,8 @@ class HomeFragment: Fragment() {
 
         val adapter = FragmentPagerItemAdapter(
             this.childFragmentManager, FragmentPagerItems.with(activity)
-                .add("", MarketFragment::class.java)
-//                .add(R.string.ratan_starline_games, RatanStarlineGamesFragment::class.java)
+                .add(R.string.market, MarketFragment::class.java)
+                .add(R.string.starline, RatanStarlineGamesFragment::class.java)
                 .create()
         )
 

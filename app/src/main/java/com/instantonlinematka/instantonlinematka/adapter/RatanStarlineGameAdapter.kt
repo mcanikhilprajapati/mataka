@@ -17,11 +17,10 @@ import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
 import com.instantonlinematka.instantonlinematka.view.activity.DrawerActivity
 import com.instantonlinematka.instantonlinematka.view.activity.games.ratan.RatanGameModesActivity
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
-import kotlinx.android.synthetic.main.item_ratan_starline_game_list.view.*
-import kotlinx.android.synthetic.main.item_ratan_starline_game_list.view.txtResult
-import kotlinx.android.synthetic.main.item_ratan_starline_game_list.view.txtStatus
-import kotlinx.android.synthetic.main.item_ratan_starline_game_list.view.txtTime
-import kotlinx.android.synthetic.main.item_ratan_starline_game_list_new.view.*
+import kotlinx.android.synthetic.main.item_game_list_final_old.view.*
+
+import kotlinx.android.synthetic.main.item_ratan_starline_game_list_old.view.*
+import kotlinx.android.synthetic.main.item_ratan_starline_game_list_old.view.lblPlayGame
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -37,12 +36,16 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
         val lblStatus = itemView.txtStatus
         val lblResult = itemView.txtResult
         val imgButton = itemView.cl_imageViewPlayStarlineGame
+        val lblPlayGame = itemView.lblPlayGame
+        val imgPlayStatus = itemView.imageViewPlayButton
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RatanStarlineViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_ratan_starline_game_list_new, parent, false)
+            .inflate(R.layout.item_ratan_starline_game_list_old, parent, false)
         return RatanStarlineViewHolder(view)
     }
 
@@ -56,27 +59,42 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
 
         if (GameStatus.contentEquals("0")) {
             holder.lblStatus.text = context.getString(R.string.bidding_is_closed_for_today)
+            holder.lblPlayGame.text = "Closed"
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
-                context, R.color.colorPrimary))
+                context, R.color.BgRed))
+
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
+            holder.imgButton.setBackgroundResource(R.drawable.round_red_corner_2)
         }
         else if (GameStatus.contentEquals("1")) {
             holder.lblStatus.text = context.getString(R.string.bidding_is_running_for_today)
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
                 context, R.color.Green))
+
+            holder.lblPlayGame.text = "Play"
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_open)
+            holder.imgButton.setBackgroundResource(R.drawable.round_green_corner_2)
         }
         else if (GameStatus.contentEquals("6")) {
+            holder.lblPlayGame.text = "Closed"
             holder.lblStatus.text = context.getString(R.string.bidding_is_closed_for_today)
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
-                    context, R.color.colorPrimary))
+                    context, R.color.BgRed))
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
+            holder.imgButton.setBackgroundResource(R.drawable.round_red_corner_2)
         }
         else {
+            holder.lblPlayGame.text = "Closed"
             holder.lblStatus.text = context.getString(R.string.bidding_is_closed_for_today)
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
-                    context, R.color.colorPrimary))
+                    context, R.color.BgRed))
+
+            holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
+            holder.imgButton.setBackgroundResource(R.drawable.round_red_corner_2)
         }
 
         holder.lblResult.text = "${data.panna_result} - ${data.single_digit_result}"

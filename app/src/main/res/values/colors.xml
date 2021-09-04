@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#65013D</color>
-    <color name="colorPrimaryDark">#65013D</color>
+    <color name="colorPrimary">#B5245F</color>
+    <color name="colorPrimaryDark">#B5245F</color>
     <color name="colorAccent">@color/colorPrimary</color>
 
     <color name="DarkRed">#65013D</color>
@@ -164,5 +164,9 @@
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
     <color name="Lightred">#ffc6c4</color>
+    <color name="HalfGray">#F3F1F1</color>
+    <color name="BgRed">#FF0000</color>
+    <color name="BgGreen">#42A623</color>
+    <color name="BgOrange">#FEC420</color>
 
 </resources>

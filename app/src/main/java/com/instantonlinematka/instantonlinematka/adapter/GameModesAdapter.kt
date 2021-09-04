@@ -49,7 +49,7 @@ class GameModesAdapter(
 
         holder.GameImage.setImageDrawable(data.gameImage)
         holder.GameName.text = data.gameName
-        holder.GameName.setTextColor(data.gameColor!!)
+//        holder.GameName.setTextColor(data.gameColor!!)
 
         holder.btnGame.setSafeOnClickListener {
 
@@ -96,18 +96,19 @@ class GameModesAdapter(
                 (context as MarketGameModesActivity).startActivityForResult(intent, 1)
             } else {
                 val mDialog = Dialog(context)
+                mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
                 mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                 mDialog.setContentView(R.layout.alert_game_type)
                 mDialog.window!!.setGravity(Gravity.CENTER)
 
-                val imgOpen = mDialog.imgOpenGameType
-                val imgClose = mDialog.imgCloseGameType
+//                val imgOpen = mDialog.imgOpenGameType
+//                val imgClose = mDialog.imgCloseGameType
 
                 val lblOpen = mDialog.lblOpenGameType
                 val lblClose = mDialog.lblCloseGameType
 
-                val btnOpen = mDialog.btnOpenType
-                val btnClose = mDialog.btnCloseType
+//                val btnOpen = mDialog.btnOpenType
+//                val btnClose = mDialog.btnCloseType
 
                 if (data.expired!!) {
 //                    imgOpen.setImageDrawable(
@@ -124,7 +125,7 @@ class GameModesAdapter(
 //                        )
 //                    )
                     lblClose.setTextColor(ContextCompat.getColor(context, R.color.Black))
-                    btnOpen.isEnabled = false
+                    lblOpen.isEnabled = false
                 } else {
 //                    imgOpen.setImageDrawable(
 //                        ContextCompat.getDrawable(
@@ -140,10 +141,10 @@ class GameModesAdapter(
 //                        )
 //                    )
                     lblClose.setTextColor(ContextCompat.getColor(context, R.color.Black))
-                    btnOpen.isEnabled = true
+                    lblOpen.isEnabled = true
                 }
 
-                btnOpen.setSafeOnClickListener {
+                lblOpen.setSafeOnClickListener {
                     selection(
                         data.gameTypeId!!,
                         context.getString(R.string.open_type),
@@ -154,7 +155,7 @@ class GameModesAdapter(
                     mDialog.dismiss()
                 }
 
-                btnClose.setSafeOnClickListener {
+                lblClose.setSafeOnClickListener {
                     selection(
                         data.gameTypeId!!, context.getString(R.string.close_type), data.gameName,
                         data.gameId!!, data.gameCatId!!

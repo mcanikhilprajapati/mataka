@@ -11,7 +11,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/gradient_bg_game_modes"
+        android:background="@drawable/round_white_corner"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_bg_game_modes"
+            android:background="@drawable/round_white_corner"
             android:padding="@dimen/_8sdp">
 
             <androidx.constraintlayout.widget.Guideline
@@ -49,7 +49,7 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:fontFamily="@font/quicksand"
                 tools:text="JODI"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_17sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/imgGameMode"
                 app:layout_constraintEnd_toStartOf="@+id/guideline3"
