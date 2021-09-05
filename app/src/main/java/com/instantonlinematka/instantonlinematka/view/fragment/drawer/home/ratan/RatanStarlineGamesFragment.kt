@@ -52,6 +52,18 @@ class RatanStarlineGamesFragment : Fragment() {
 
     lateinit var ratanGameList: ArrayList<RatanStarlineGameData>
 
+
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        if (isVisibleToUser) {
+            if(this::adapter.isInitialized)
+                adapter.cancelAllTimers()
+        } else {
+            if(this::adapter.isInitialized)
+                adapter.cancelAllTimers()
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

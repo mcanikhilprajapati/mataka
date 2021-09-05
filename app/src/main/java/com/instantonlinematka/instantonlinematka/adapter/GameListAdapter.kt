@@ -1,5 +1,6 @@
 package com.instantonlinematka.instantonlinematka.adapter
 
+import android.R.attr
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -27,10 +28,20 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import android.os.CountDownTimer
+
+import android.util.SparseArray
+import android.R.attr.data
+
+
+
+
+
+
 
 class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData>) :
     RecyclerView.Adapter<GameListAdapter.GameHolder>() {
-
+    private val countDownMap: SparseArray<CountDownTimer> =   SparseArray();
     lateinit var GameOpenResults: String
     lateinit var GameCenterOpenResults: String
     lateinit var GameCenterCloseResults: String
@@ -38,6 +49,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
 
     class GameHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        var countDownTimer: CountDownTimer? = null
         val lblGameName = itemView.txtGameName
         val lblGameNumber = itemView.txtNumbers
         val lblOpenTime = itemView.txtOpenTime
@@ -48,6 +60,20 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         val imgPlayStatus = itemView.imgPlayStatus
         val lblStatusTime = itemView.lblStatusTime
        // val btnPlayGame = itemView.btnPlayGame
+    }
+
+    fun cancelAllTimers() {
+        if (countDownMap == null) {
+            return
+        }
+        Log.e("TAG", "size :  " + countDownMap.size())
+        var i = 0
+        val length = countDownMap.size()
+        while (i < length) {
+            val cdt = countDownMap[countDownMap.keyAt(i)]
+            cdt?.cancel()
+            i++
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameHolder {
@@ -61,6 +87,9 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
     @SuppressLint("RestrictedApi")
     override fun onBindViewHolder(holder: GameHolder, position: Int) {
 
+        if (holder.countDownTimer != null) {
+            holder.countDownTimer!!.cancel();
+        }
         val gameData = gameList.get(position)
 
         val GameName = gameData.game_type_name!!
@@ -105,6 +134,8 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         holder.lblGameNumber.text =
             "$GameOpenResults-$GameCenterOpenResults$GameCenterCloseResults-$GameCloseResults"
 
+
+        //holder.lblStatusTime.text = ConvertTime.ConvertTimeDiff("23:55")
 //        Toast.makeText(context,"Close time = "+ConvertTime.ConvertTimeDiff("18:00"),Toast.LENGTH_SHORT).show()
         if (GameStatus.contentEquals("0")) {
 //            holder.lblBiddingStatus.text = context.getString(R.string.bidding_is_closed_for_today)
@@ -147,8 +178,30 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
             val dateFormat = SimpleDateFormat("HH.mm")
             val currentDate: String = dateFormat.format(Date()).toString()
 
-            val time = System.currentTimeMillis()
-            Log.i("Time Class ", " Time value in millisecinds $time")
+
+
+            val time : Long= ConvertTime.getTimeDiff(CloseTime)
+            if (time > 0) {
+                 holder.countDownTimer = object : CountDownTimer(time, 60000) {
+                    override fun onTick(millisUntilFinished: Long) {
+                        holder.lblStatusTime.setText(
+                            ConvertTime.getCountTimeByLong(
+                                millisUntilFinished
+                            )
+                        )
+                        Log.e("TAG", "===>>" + ConvertTime.getCountTimeByLong(millisUntilFinished))
+                    }
+
+                    override fun onFinish() {
+                        holder.lblStatusTime.setText("00:00:00")
+                    }
+                }.start()
+
+                countDownMap.put(holder.lblStatusTime.hashCode(), holder.countDownTimer)
+            } else {
+                holder.lblStatusTime.setText("00:00:00")
+            }
+
             holder.lblBiddingStatus.text =         "Market Running"
             holder.lblPlayGame.text = "Play"
             holder.lblStatusTime.text = ConvertTime.ConvertTimeDiff(CloseTime)
