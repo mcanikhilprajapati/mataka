@@ -12,7 +12,6 @@ object RetrofitClient {
     // BASE URL
     // var BASE_URL = "https://instantonlinematka.com/api/"
     // var BASE_URL = "http://matka-live-1678416646.ap-south-1.elb.amazonaws.com/api/"
-//    var BASE_URL = "https://www.mstaradmin.com/api/"
     var BASE_URL = "http://avgames.in/api/"
 
     private lateinit var logging: HttpLoggingInterceptor

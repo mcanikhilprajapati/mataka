@@ -34,7 +34,15 @@
             android:visibility="gone"
             android:textSize="40sp"
             android:textColor="@color/white"></TextView>
+        <ImageView
+            android:layout_width="273dp"
+            android:layout_height="73dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_75sdp"
+            android:layout_marginRight="@dimen/_75sdp"
+            android:src="@drawable/new_logo">
 
+        </ImageView>
 
         <ImageView
             android:layout_width="273dp"
