@@ -54,7 +54,6 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
         val data = ratanGameList.get(position)
 
         holder.lblTime.text = ConvertTime.ConvertTimeToPM(data.open_time!!)
-
         val GameStatus = data.game_status!!
 
         if (GameStatus.contentEquals("0")) {

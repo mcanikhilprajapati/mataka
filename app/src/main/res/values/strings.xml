@@ -91,8 +91,8 @@
     <string name="ratan_starline_games">Kalayan Starline</string>
     <string name="quit">Quit</string>
     <string name="no_game_list_found_in_the_market">No game list found in the market</string>
-    <string name="bidding_is_closed_for_today">Bidding is closed for today</string>
-    <string name="bidding_is_running_for_today">Bidding is running for today</string>
+    <string name="bidding_is_closed_for_today">Bidding is Closed</string>
+    <string name="bidding_is_running_for_today">Bidding is Running</string>
     <string name="bidding_is_running_for_close_bids">Bidding is running for close bids</string>
     <string name="market_name">Market Name</string>
     <string name="play_on">PLAY ON :</string>
