@@ -1,11 +1,16 @@
 package com.instantonlinematka.instantonlinematka.view.activity
 
 import android.annotation.SuppressLint
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.telephony.PhoneNumberUtils
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.instantonlinematka.instantonlinematka.R
@@ -16,6 +21,7 @@ import com.instantonlinematka.instantonlinematka.utility.Constants
 import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
 import com.instantonlinematka.instantonlinematka.utility.SessionPrefs
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.AccountsFragment
+import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.funds.AddFundsActivity
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.bidding_history.BiddingHistoryFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.home.HomeFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.home.PopUpFragment
@@ -70,6 +76,10 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
+        layoutWhatsAppChat.setSafeOnClickListener {
+            openWhatsApp()
+        }
+
         nav_bottom.setOnNavigationItemSelectedListener(this)
 
         val bundle = Bundle()
@@ -96,10 +106,51 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         dialogFragment.setCancelable(true)
 //        dialogFragment.show(ft, "dialog")
 
-        btnNotification.setSafeOnClickListener {
+        imgNotification.setSafeOnClickListener {
             startActivity(Intent(context, NotificationActivity::class.java))
         }
 
+        layoutAddCash.setSafeOnClickListener {
+
+            val intent = Intent(context, AddFundsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+
+
+    private fun openWhatsApp() {
+        val smsNumber = "919743971427"
+        val isWhatsappInstalled = whatsappInstalledOrNot("com.whatsapp")
+        if (isWhatsappInstalled) {
+            val sendIntent = Intent("android.intent.action.MAIN")
+            sendIntent.component = ComponentName("com.whatsapp", "com.whatsapp.Conversation")
+            sendIntent.putExtra(
+                "jid",
+                PhoneNumberUtils.stripSeparators(smsNumber) + "@s.whatsapp.net"
+            ) //phone number without "+" prefix
+            startActivity(sendIntent)
+        } else {
+            val uri = Uri.parse("market://details?id=com.whatsapp")
+            val goToMarket = Intent(Intent.ACTION_VIEW, uri)
+            Toast.makeText(
+                this, "WhatsApp not Installed",
+                Toast.LENGTH_SHORT
+            ).show()
+            startActivity(goToMarket)
+        }
+    }
+
+    private fun whatsappInstalledOrNot(uri: String): Boolean {
+        val pm = this.packageManager
+        var app_installed = false
+        app_installed = try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
+        return app_installed
     }
 
     override fun onResume() {
@@ -108,7 +159,7 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         if (wallet.isEmpty()) {
             toolbar_Wallet.text = "- - -"
         } else {
-            toolbar_Wallet.text = wallet
+            toolbar_Wallet.text = "₹"+wallet
         }
         val notification_count = sessionPrefs.getString(Constants.NOTIFICATION_COUNT)
         if (notification_count.isEmpty() || notification_count.toInt() == 0) {

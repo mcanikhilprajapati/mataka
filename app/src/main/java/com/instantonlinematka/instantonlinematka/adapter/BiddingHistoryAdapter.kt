@@ -30,6 +30,7 @@ class BiddingHistoryAdapter(val context: Context, val biddingList: ArrayList<Bid
         var lblPointsAnswer = itemView.lblPointsAnswer
        // var lblBidTimeAnswer = itemView.lblBidTimeAnswer
         var lblYouWonAnswer = itemView.lblYouWonAnswer
+        var lblYouWonAnswerAmount = itemView.lblYouWonAnswerAmount
         var imgEmoji = itemView.imgEmoji
     }
 
@@ -55,40 +56,45 @@ class BiddingHistoryAdapter(val context: Context, val biddingList: ArrayList<Bid
 
         //holder.lblBidTimeAnswer.setText(timeinPM)
         if (data.status!!.contentEquals("1")) {
-            holder.lblYouWonAnswer.text = context.getString(R.string.congratulations) + " " + data.won_amount
+
+            holder.lblYouWonAnswer.text = context.getString(R.string.congratulations)
+            holder.lblYouWonAnswerAmount.text =  data.won_amount
+            holder.lblYouWonAnswerAmount.visibility =  View.VISIBLE
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.Green
+                    R.color.Gray
                 )
             )
-            holder.imgEmoji.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_won))
+            holder.imgEmoji.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.win))
         } else if (data.status.contentEquals("2")) {
             holder.lblYouWonAnswer.text = context.getString(R.string.results_not_announced)
+            holder.lblYouWonAnswerAmount.visibility =  View.GONE
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.colorPrimary
+                    R.color.Gray
                 )
             )
             holder.imgEmoji.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.ic_no_results
+                    R.drawable.not_announced
                 )
             )
         } else if (data.status.contentEquals("0")) {
             holder.lblYouWonAnswer.text = context.getString(R.string.better_luck_next_time)
+            holder.lblYouWonAnswerAmount.visibility =  View.GONE
             holder.lblYouWonAnswer.setTextColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.colorPrimary
+                    R.color.Gray
                 )
             )
             holder.imgEmoji.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.ic_lost
+                    R.drawable.loss
                 )
             )
         }

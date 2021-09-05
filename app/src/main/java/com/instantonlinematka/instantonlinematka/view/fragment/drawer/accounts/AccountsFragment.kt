@@ -252,7 +252,7 @@ class AccountsFragment : Fragment() {
                         if (wallet.isEmpty()) {
                             ((activity as DrawerActivity).toolbar_Wallet).text = "- - -"
                         } else {
-                            ((activity as DrawerActivity).toolbar_Wallet.setText(wallet))
+                            ((activity as DrawerActivity).toolbar_Wallet.setText("₹"+wallet))
                         }
                     } catch (e: Exception) {
                     }

@@ -280,7 +280,7 @@ class RatanTriplePannaGameActivity : AppCompatActivity() {
         if (wallet.isEmpty()) {
             toolbar_Wallet.text = "- - -"
         } else {
-            toolbar_Wallet.text = wallet
+            toolbar_Wallet.text = "₹"+wallet
         }
         val notification_count = sessionPrefs.getString(Constants.NOTIFICATION_COUNT)
         if (notification_count.isEmpty() || notification_count.toInt() == 0) {
@@ -475,7 +475,7 @@ class RatanTriplePannaGameActivity : AppCompatActivity() {
                         if (wallet.isEmpty()) {
                             toolbar_Wallet.text = "- - -"
                         } else {
-                            toolbar_Wallet.text = wallet
+                            toolbar_Wallet.text = "₹"+wallet
                         }
                     }
 

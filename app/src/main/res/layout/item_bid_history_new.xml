@@ -66,23 +66,30 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/llRight"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/round_white_gray"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="10dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgEmoji"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="3dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -93,17 +100,32 @@
                     android:id="@+id/lblYouWonAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:paddingLeft="2dp"
                     android:paddingRight="2dp"
-                    android:text="Closed"
-                    android:maxLines="2"
-                    android:ellipsize="end"
+                    android:text="You Won"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10sdp"
                     android:visibility="visible" />
-            </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblYouWonAnswerAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:text="100"
+
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -234,7 +234,7 @@ class BankDetailsFragment : Fragment() {
                     sessionPrefs.addString(Constants.PHONEPE, phonepe)
                     sessionPrefs.addString(Constants.PAYTM, paytm)
 
-                    ((activity as DrawerActivity).toolbar_Wallet.setText(wallet))
+                    ((activity as DrawerActivity).toolbar_Wallet.setText("₹"+wallet))
 
                     binding.txtBankName.setText(sessionPrefs.getString(Constants.BANK_NAME))
                     binding.txtBankAccountHolderName.setText(sessionPrefs.getString(Constants.BANK_HOLDER_NAME))

@@ -104,9 +104,9 @@
     <string name="select_market_name">Select Market Name</string>
     <string name="choose_market_name">Choose Market Name</string>
     <string name="no_bidding_history_available_at_the_moment">No bidding history available at the moment</string>
-    <string name="congratulations">Congratulations!! You have won: ₹</string>
-    <string name="results_not_announced">Results not announced yet</string>
-    <string name="better_luck_next_time">Better luck next time!!!</string>
+    <string name="congratulations">You won</string>
+    <string name="results_not_announced">Results Not\nAnnounced</string>
+    <string name="better_luck_next_time">You Lost</string>
     <string name="confirm">Confirm</string>
     <string name="do_you_want_to_close">Are you ready to close Matka Wala?</string>
     <string name="yes">Yes</string>
