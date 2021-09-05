@@ -10,10 +10,10 @@
     tools:context=".view.activity.SplashActivity">
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_80sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         android:weightSum="100">
 
         <TextView
@@ -23,6 +23,7 @@
             android:gravity="center"
             android:text="Welcome to"
             android:textSize="25sp"
+            android:visibility="gone"
             android:textColor="@color/white"></TextView>
         <TextView
             android:fontFamily="@font/montserrat"
@@ -30,6 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Matkawala"
+            android:visibility="gone"
             android:textSize="40sp"
             android:textColor="@color/white"></TextView>
 
@@ -39,7 +41,6 @@
             android:layout_height="73dp"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/_75sdp"
-            android:layout_marginTop="@dimen/_100sdp"
             android:layout_marginRight="@dimen/_75sdp"
             android:src="@drawable/sp">
 

@@ -3,9 +3,11 @@ package com.instantonlinematka.instantonlinematka.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.daimajia.androidanimations.library.Techniques
@@ -22,6 +24,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData>) :
     RecyclerView.Adapter<GameListAdapter.GameHolder>() {
@@ -41,6 +46,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         val lblPlayGame = itemView.lblPlayGame
         val imgPlayButton = itemView.constraintLayout12
         val imgPlayStatus = itemView.imgPlayStatus
+        val lblStatusTime = itemView.lblStatusTime
        // val btnPlayGame = itemView.btnPlayGame
     }
 
@@ -65,6 +71,8 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         val CenterOpenResults = gameData.center_open_result!!
         val CenterCloseResults = gameData.center_close_result!!
         val GameStatus = gameData.game_status!!
+
+
 
         if (GameName.isEmpty())
             holder.lblGameName.text = "- - -"
@@ -97,6 +105,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
         holder.lblGameNumber.text =
             "$GameOpenResults-$GameCenterOpenResults$GameCenterCloseResults-$GameCloseResults"
 
+//        Toast.makeText(context,"Close time = "+ConvertTime.ConvertTimeDiff("18:00"),Toast.LENGTH_SHORT).show()
         if (GameStatus.contentEquals("0")) {
 //            holder.lblBiddingStatus.text = context.getString(R.string.bidding_is_closed_for_today)
             holder.lblPlayGame.text = "Closed"
@@ -133,8 +142,16 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
 //            )
         } else if (GameStatus.contentEquals("6")) {
 //            holder.lblBiddingStatus.text =                context.getString(R.string.bidding_is_running_for_close_bids)
+          //  Toast.makeText(context,"Close time = "+CloseTime,Toast.LENGTH_SHORT).show()
+
+            val dateFormat = SimpleDateFormat("HH.mm")
+            val currentDate: String = dateFormat.format(Date()).toString()
+
+            val time = System.currentTimeMillis()
+            Log.i("Time Class ", " Time value in millisecinds $time")
             holder.lblBiddingStatus.text =         "Market Running"
             holder.lblPlayGame.text = "Play"
+            holder.lblStatusTime.text = ConvertTime.ConvertTimeDiff(CloseTime)
             holder.lblBiddingStatus.setTextColor(
                 ContextCompat.getColor(
                     context, R.color.DarkYellow

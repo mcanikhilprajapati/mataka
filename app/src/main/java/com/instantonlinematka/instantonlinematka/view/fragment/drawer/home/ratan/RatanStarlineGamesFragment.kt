@@ -73,6 +73,13 @@ class RatanStarlineGamesFragment : Fragment() {
         ratanGameList = ArrayList()
         Log.i("ratanGameListratanGameListratanGameList", "onCreateView: "+ratanGameList)
 
+
+        binding.swipeRefreshLayout.setColorSchemeColors(resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent))
+        binding.swipeRefreshLayout.setOnRefreshListener {
+
+            getRatanStarlineGameList()
+
+        }
         adapter = RatanStarlineGameAdapter(contextPlayRatan, ratanGameList)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(
@@ -146,7 +153,7 @@ class RatanStarlineGamesFragment : Fragment() {
             makeRatanStarlineGameListApiCall()
         }
         else {
-
+            binding.swipeRefreshLayout.isRefreshing=false
             val mBottomSheetDialog: BottomSheetMaterialDialog =
                 BottomSheetMaterialDialog.Builder(activity!!)
                     .setTitle(getString(R.string.uhoh))
@@ -181,7 +188,7 @@ class RatanStarlineGamesFragment : Fragment() {
                 call: Call<RatanStarlineGameResponse>,
                 response: Response<RatanStarlineGameResponse>
             ) {
-
+                binding.swipeRefreshLayout.isRefreshing=false
                 ratanGameList.clear()
 
                 val ratanGameListData = response.body()!!
@@ -226,7 +233,7 @@ class RatanStarlineGamesFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<RatanStarlineGameResponse>, t: Throwable) {
-
+                binding.swipeRefreshLayout.isRefreshing=false
                 binding.wp10progressBar.hideProgressBar()
 
                 binding.linearHome.visibility = View.VISIBLE
