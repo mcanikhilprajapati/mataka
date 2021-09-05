@@ -81,6 +81,13 @@ class MarketFragment : Fragment() {
             binding.txtWallet.text = wallet+""
         }
 
+        binding.swipeRefreshLayout.setColorSchemeColors(resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent))
+        binding.swipeRefreshLayout.setOnRefreshListener {
+
+            getMarketGameList()
+
+        }
+
         apiInterface = RetrofitClient.getRetrfitInstance()
 
         gameList = ArrayList()
@@ -164,6 +171,7 @@ class MarketFragment : Fragment() {
             makeMarketGameListApiCall()
         }
         else {
+            binding.swipeRefreshLayout.isRefreshing = false
 
             val mBottomSheetDialog: BottomSheetMaterialDialog =
                 BottomSheetMaterialDialog.Builder(activity!!)
@@ -200,7 +208,7 @@ class MarketFragment : Fragment() {
                 call: Call<GameListResponse>,
                 response: Response<GameListResponse>
             ) {
-
+                binding.swipeRefreshLayout.isRefreshing = false
                 gameList.clear()
 
                 val dataResponse = response.body()!!
@@ -246,6 +254,7 @@ class MarketFragment : Fragment() {
 
             override fun onFailure(call: Call<GameListResponse>, t: Throwable) {
 
+                binding.swipeRefreshLayout.isRefreshing = false
                 binding.wp10progressBar.hideProgressBar()
 
                 binding.linearHome.visibility = View.VISIBLE
