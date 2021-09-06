@@ -182,7 +182,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
 
             val time : Long= ConvertTime.getTimeDiff(CloseTime)
             if (time > 0) {
-                 holder.countDownTimer = object : CountDownTimer(time, 60000) {
+                 holder.countDownTimer = object : CountDownTimer(time, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
                         holder.lblStatusTime.setText(
                             ConvertTime.getCountTimeByLong(

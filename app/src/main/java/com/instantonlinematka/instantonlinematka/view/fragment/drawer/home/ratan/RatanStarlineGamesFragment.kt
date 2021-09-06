@@ -83,7 +83,6 @@ class RatanStarlineGamesFragment : Fragment() {
         apiInterface = RetrofitClient.getRetrfitInstance()
 
         ratanGameList = ArrayList()
-        Log.i("ratanGameListratanGameListratanGameList", "onCreateView: "+ratanGameList)
 
 
         binding.swipeRefreshLayout.setColorSchemeColors(resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent),resources.getColor(R.color.colorAccent))

@@ -95,7 +95,7 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
 
             val time : Long= ConvertTime.getTimeDiff(CloseTime)
             if (time > 0) {
-                holder.countDownTimer = object : CountDownTimer(time, 60000) {
+                holder.countDownTimer = object : CountDownTimer(time, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
                         holder.lblStatusTime.setText(
                             ConvertTime.getCountTimeByLong(

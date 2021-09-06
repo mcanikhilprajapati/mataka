@@ -94,7 +94,11 @@ object ConvertTime {
         } else {
             sb.append(minute).append(":")
         }
-            sb.append("00")
+        if (second < 10) {
+            sb.append("0").append(second)
+        } else {
+            sb.append(second)
+        }
         return sb.toString()
     }
 
