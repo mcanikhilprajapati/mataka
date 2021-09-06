@@ -11,13 +11,13 @@
         android:title="@string/bidding" />
     <item
         android:id="@+id/nav_accounts"
-        android:icon="@drawable/ic_wallet"
+        android:icon="@drawable/ic_wallet_new"
         android:title="@string/wallet" />
 
 
     <item
         android:id="@+id/nav_more"
-        android:icon="@drawable/ic_more"
+        android:icon="@drawable/ic_more_new"
         android:title="@string/menu" />
 
 </menu>

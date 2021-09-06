@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/background_game_list_card.xml" value="0.15925925925925927" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/ic_more.xml" value="0.15092592592592594" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_corner_bottom_gray.xml" value="0.15925925925925927" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_corner_bottom_gray_2.xml" value="0.11944444444444445" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_corners_lightred.xml" value="0.11944444444444445" />
@@ -44,6 +45,7 @@
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_ratan_starline_game_list_old.xml" value="0.25416666666666665" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/market_fragment.xml" value="0.2" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/ratan_starline_fragment.xml" value="0.2" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/menu/main_menu_bottom.xml" value="0.22592592592592592" />
       </map>
     </option>
   </component>
