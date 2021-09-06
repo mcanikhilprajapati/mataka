@@ -46,6 +46,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:tint="@color/Red"
                 app:srcCompat="@drawable/icon_dropdown_red_down" />
 
             <androidx.appcompat.widget.AppCompatButton
