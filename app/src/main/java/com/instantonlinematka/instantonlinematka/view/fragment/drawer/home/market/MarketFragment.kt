@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.adapter.GameListAdapter
+import com.instantonlinematka.instantonlinematka.adapter.onTimerCompleteListener
 import com.instantonlinematka.instantonlinematka.databinding.MarketFragmentBinding
 import com.instantonlinematka.instantonlinematka.model.GameListData
 import com.instantonlinematka.instantonlinematka.model.GameListResponse
@@ -42,7 +43,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 @SuppressLint("RestrictedApi")
-class MarketFragment : Fragment() {
+class MarketFragment : Fragment(), onTimerCompleteListener {
 
     lateinit var binding: MarketFragmentBinding
 
@@ -57,6 +58,9 @@ class MarketFragment : Fragment() {
     lateinit var gameList: ArrayList<GameListData>
 
     lateinit var adapter: GameListAdapter
+    lateinit var onTimerCompleteListener: onTimerCompleteListener
+
+
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
@@ -75,7 +79,7 @@ class MarketFragment : Fragment() {
     ): View? {
 
 
-
+        onTimerCompleteListener =this
         binding = MarketFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -102,14 +106,25 @@ class MarketFragment : Fragment() {
 
         gameList = ArrayList()
 
-        adapter = GameListAdapter(contextMarket, gameList)
+        adapter = GameListAdapter(contextMarket, gameList,onTimerCompleteListener)
 
         binding.recyclerView.layoutManager = LinearLayoutManager (
             context, LinearLayoutManager.VERTICAL, false
         )
 
+
         binding.recyclerView.adapter = adapter
 
+
+
+//        adapter!!.onTimerComplete?.let {
+//            it { int->
+//
+//                Toast.makeText(context,"Load",Toast.LENGTH_SHORT).show()
+//                getMarketGameList()
+//
+//            }
+//        }
         binding.btnRetry.setSafeOnClickListener {
             getMarketGameList()
         }
@@ -252,7 +267,7 @@ class MarketFragment : Fragment() {
                 }
                 else {
 
-                    adapter = GameListAdapter(contextMarket, gameList)
+                    adapter = GameListAdapter(contextMarket, gameList,onTimerCompleteListener)
 
                     binding.linearHome.visibility = View.GONE
                     binding.recyclerView.visibility = View.VISIBLE
@@ -281,5 +296,12 @@ class MarketFragment : Fragment() {
             onSafeClick(it)
         }
         setOnClickListener(safeClickListener)
+    }
+
+    override fun onTimerComplete(item: Int) {
+
+
+               // Toast.makeText(context,"Load",Toast.LENGTH_SHORT).show()
+                getMarketGameList()
     }
 }

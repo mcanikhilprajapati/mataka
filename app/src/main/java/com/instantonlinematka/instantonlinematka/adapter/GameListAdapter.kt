@@ -35,17 +35,23 @@ import android.R.attr.data
 
 
 
+interface onTimerCompleteListener {
+    fun onTimerComplete(item: Int)
+}
 
 
 
+class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData>,listener: onTimerCompleteListener ) :
+    RecyclerView.Adapter<GameListAdapter.GameHolder>(
 
-class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData>) :
-    RecyclerView.Adapter<GameListAdapter.GameHolder>() {
+    ) {
     private val countDownMap: SparseArray<CountDownTimer> =   SparseArray();
     lateinit var GameOpenResults: String
     lateinit var GameCenterOpenResults: String
     lateinit var GameCenterCloseResults: String
     lateinit var GameCloseResults: String
+      var onTimerCompleteListener=listener
+
 
     class GameHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -85,7 +91,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
     }
 
     @SuppressLint("RestrictedApi")
-    override fun onBindViewHolder(holder: GameHolder, position: Int) {
+    override fun onBindViewHolder(holder: GameHolder, @SuppressLint("RecyclerView") position: Int) {
 
         if (holder.countDownTimer != null) {
             holder.countDownTimer!!.cancel();
@@ -146,6 +152,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                     context, R.color.Red
                 )
             )
+            holder.lblStatusTime.setText("00:00:00")
             holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
             holder.imgPlayButton.setBackgroundResource(R.drawable.round_red_corner_2)
 //            holder.imgPlayButton.setImageDrawable(
@@ -163,6 +170,31 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                     context, R.color.Green
                 )
             )
+            val time : Long= ConvertTime.getTimeDiff(OpenTime)
+            if (time > 0) {
+                holder.countDownTimer = object : CountDownTimer(time, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+//                        Toast.makeText(context,"LoadING",Toast.LENGTH_SHORT).show()
+                        // onTimerCompleteListener.onTimerComplete(position)
+                        holder.lblStatusTime.setText(
+                            ConvertTime.getCountTimeByLong(
+                                millisUntilFinished
+                            )
+                        )
+                        Log.e("TAG", "===>>" + ConvertTime.getCountTimeByLong(millisUntilFinished))
+                    }
+
+                    override fun onFinish() {
+                        onTimerCompleteListener.onTimerComplete(position)
+                        holder.lblStatusTime.setText("00:00:00")
+                    }
+                }.start()
+
+                countDownMap.put(holder.lblStatusTime.hashCode(), holder.countDownTimer)
+            } else {
+                holder.lblStatusTime.setText("00:00:00")
+            }
+
             holder.imgPlayStatus.setImageResource(R.drawable.ic_open)
             holder.imgPlayButton.setBackgroundResource(R.drawable.round_green_corner_2)
 //            holder.imgPlayButton.setImageDrawable(
@@ -184,6 +216,8 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
             if (time > 0) {
                  holder.countDownTimer = object : CountDownTimer(time, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
+//                        Toast.makeText(context,"LoadING",Toast.LENGTH_SHORT).show()
+                       // onTimerCompleteListener.onTimerComplete(position)
                         holder.lblStatusTime.setText(
                             ConvertTime.getCountTimeByLong(
                                 millisUntilFinished
@@ -193,6 +227,7 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                     }
 
                     override fun onFinish() {
+                        onTimerCompleteListener.onTimerComplete(position)
                         holder.lblStatusTime.setText("00:00:00")
                     }
                 }.start()
@@ -228,6 +263,31 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
                     context, R.color.Green
                 )
             )
+            val time : Long= ConvertTime.getTimeDiff(OpenTime)
+            if (time > 0) {
+                holder.countDownTimer = object : CountDownTimer(time, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+//                        Toast.makeText(context,"LoadING",Toast.LENGTH_SHORT).show()
+                        // onTimerCompleteListener.onTimerComplete(position)
+                        holder.lblStatusTime.setText(
+                            ConvertTime.getCountTimeByLong(
+                                millisUntilFinished
+                            )
+                        )
+                        Log.e("TAG", "===>>" + ConvertTime.getCountTimeByLong(millisUntilFinished))
+                    }
+
+                    override fun onFinish() {
+                          onTimerCompleteListener.onTimerComplete(position)
+                        holder.lblStatusTime.setText("00:00:00")
+                    }
+                }.start()
+
+                countDownMap.put(holder.lblStatusTime.hashCode(), holder.countDownTimer)
+            } else {
+                holder.lblStatusTime.setText("00:00:00")
+            }
+
             holder.lblPlayGame.text = "Play"
             holder.imgPlayStatus.setImageResource(R.drawable.ic_open)
             holder.imgPlayButton.setBackgroundResource(R.drawable.round_green_corner_2)

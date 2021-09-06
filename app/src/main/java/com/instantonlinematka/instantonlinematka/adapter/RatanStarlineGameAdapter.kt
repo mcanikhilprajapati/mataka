@@ -19,6 +19,7 @@ import com.instantonlinematka.instantonlinematka.utility.ConvertTime
 import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
 import com.instantonlinematka.instantonlinematka.view.activity.DrawerActivity
 import com.instantonlinematka.instantonlinematka.view.activity.games.ratan.RatanGameModesActivity
+import com.instantonlinematka.instantonlinematka.view.fragment.drawer.home.ratan.RatanStarlineGamesFragment
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 
 import kotlinx.android.synthetic.main.item_ratan_starline_game_list_old.view.*
@@ -29,9 +30,20 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @SuppressLint("RestrictedApi")
-class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayList<RatanStarlineGameData>) :
+
+interface onTimerCompleteListener2 {
+    fun onTimerComplete(item: Int)
+}
+
+
+class RatanStarlineGameAdapter(
+    val context: Context,
+    val ratanGameList: ArrayList<RatanStarlineGameData>,
+    val listener: onTimerCompleteListener2
+) :
     RecyclerView.Adapter<RatanStarlineGameAdapter.RatanStarlineViewHolder>() {
     private val countDownMap: SparseArray<CountDownTimer> =   SparseArray();
+    var onTimerCompleteListener=listener
     class RatanStarlineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var countDownTimer: CountDownTimer? = null
         val lblTime = itemView.txtTime
@@ -66,7 +78,8 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
         return RatanStarlineViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RatanStarlineViewHolder, position: Int) {
+    @SuppressLint("RestrictedApi")
+    override fun onBindViewHolder(holder: RatanStarlineViewHolder, @SuppressLint("RecyclerView") position: Int) {
 
         val data = ratanGameList.get(position)
         val CloseTime = data.close_time!!
@@ -79,7 +92,7 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
                 context, R.color.BgRed))
-
+            holder.lblStatusTime.setText("00:00:00")
             holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
             holder.imgButton.setBackgroundResource(R.drawable.round_red_corner_2)
         }
@@ -106,6 +119,7 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
                     }
 
                     override fun onFinish() {
+                        onTimerCompleteListener.onTimerComplete(position)
                         holder.lblStatusTime.setText("00:00:00")
                     }
                 }.start()
@@ -118,6 +132,7 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
         }
         else if (GameStatus.contentEquals("6")) {
             holder.lblPlayGame.text = "Closed"
+            holder.lblStatusTime.setText("00:00:00")
             holder.lblStatus.text = context.getString(R.string.bidding_is_closed_for_today)
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
@@ -131,7 +146,7 @@ class RatanStarlineGameAdapter(val context: Context, val ratanGameList: ArrayLis
             holder.lblStatus.setTextColor(
                 ContextCompat.getColor(
                     context, R.color.BgRed))
-
+            holder.lblStatusTime.setText("00:00:00")
             holder.imgPlayStatus.setImageResource(R.drawable.ic_close_2)
             holder.imgButton.setBackgroundResource(R.drawable.round_red_corner_2)
         }

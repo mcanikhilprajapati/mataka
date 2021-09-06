@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.adapter.RatanStarlineGameAdapter
+import com.instantonlinematka.instantonlinematka.adapter.onTimerCompleteListener
+import com.instantonlinematka.instantonlinematka.adapter.onTimerCompleteListener2
 import com.instantonlinematka.instantonlinematka.databinding.RatanStarlineFragmentBinding
 import com.instantonlinematka.instantonlinematka.model.RatanStarlineGameData
 import com.instantonlinematka.instantonlinematka.model.RatanStarlineGameResponse
@@ -36,7 +38,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 @SuppressLint("RestrictedApi")
-class RatanStarlineGamesFragment : Fragment() {
+class RatanStarlineGamesFragment : Fragment(), onTimerCompleteListener2 {
 
     lateinit var binding: RatanStarlineFragmentBinding
 
@@ -51,7 +53,7 @@ class RatanStarlineGamesFragment : Fragment() {
     lateinit var shimmer: Shimmer
 
     lateinit var ratanGameList: ArrayList<RatanStarlineGameData>
-
+    lateinit var onTimerCompleteListener: onTimerCompleteListener2
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
@@ -70,6 +72,7 @@ class RatanStarlineGamesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        onTimerCompleteListener =this
         binding = RatanStarlineFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -91,7 +94,7 @@ class RatanStarlineGamesFragment : Fragment() {
             getRatanStarlineGameList()
 
         }
-        adapter = RatanStarlineGameAdapter(contextPlayRatan, ratanGameList)
+        adapter = RatanStarlineGameAdapter(contextPlayRatan, ratanGameList,onTimerCompleteListener)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(
             context, LinearLayoutManager.VERTICAL, false
@@ -209,7 +212,6 @@ class RatanStarlineGamesFragment : Fragment() {
                 if (isResponse) {
 
                     val responseData = ratanGameListData.data
-                    Log.i("_ratanGameListratanGameListratanGameList", "onResponse: "+responseData)
 
                     for (items in responseData) {
 
@@ -275,5 +277,9 @@ class RatanStarlineGamesFragment : Fragment() {
             onSafeClick(it)
         }
         setOnClickListener(safeClickListener)
+    }
+
+    override fun onTimerComplete(item: Int) {
+        getRatanStarlineGameList()
     }
 }
