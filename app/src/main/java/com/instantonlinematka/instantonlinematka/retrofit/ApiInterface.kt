@@ -118,6 +118,16 @@ interface ApiInterface {
 
     ): Call<GameListResponse>
 
+
+    @POST("points_statment")
+    @FormUrlEncoded
+    fun getDepositHistoryList(
+
+        @Field("user_id") UserId: String,
+        @Field("type") Type: String
+
+    ): Call<DepositHistoryResponse>
+
     // Slider Images
     @POST("getAdsSliderAds")
     @FormUrlEncoded

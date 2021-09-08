@@ -11,6 +11,9 @@
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_crimson_corner.xml" value="0.11944444444444445" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_green_corner.xml" value="0.11944444444444445" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_green_corner_2.xml" value="0.15925925925925927" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_light_green_corner.xml" value="0.14537037037037037" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_light_red_corner.xml" value="0.14537037037037037" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_light_yellow_corner.xml" value="0.14537037037037037" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_new_red_corner.xml" value="0.11944444444444445" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_new_red_corner_2.xml" value="0.11944444444444445" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/round_orange_corner_2.xml" value="0.15925925925925927" />
@@ -30,6 +33,8 @@
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_splash.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/alert_game_type.xml" value="0.536" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/bidding_history_fragment.xml" value="0.190625" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/deposti_history_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/fragment_new_wallet.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_account_statement.xml" value="0.190625" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_account_statement_new.xml" value="0.536" />
@@ -43,8 +48,12 @@
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_game_modes.xml" value="0.25416666666666665" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_ratan_starline_game_list_new.xml" value="0.25416666666666665" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/item_ratan_starline_game_list_old.xml" value="0.25416666666666665" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/list_item_deposit_history.xml" value="0.264" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/list_item_withdraw_history.xml" value="0.536" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/market_fragment.xml" value="0.2" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/more_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/ratan_starline_fragment.xml" value="0.2" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/withdraw_history_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/menu/main_menu_bottom.xml" value="0.22592592592592592" />
       </map>
     </option>

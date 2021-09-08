@@ -20,13 +20,13 @@ import com.instantonlinematka.instantonlinematka.utility.Connectivity
 import com.instantonlinematka.instantonlinematka.utility.Constants
 import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
 import com.instantonlinematka.instantonlinematka.utility.SessionPrefs
+import com.instantonlinematka.instantonlinematka.view.fragment.drawer.wallet.NewWalletFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.AccountsFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.funds.AddFundsActivity
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.bidding_history.BiddingHistoryFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.home.HomeFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.home.PopUpFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.more.MoreFragment
-import com.instantonlinematka.instantonlinematka.view.fragment.drawer.refer.ReferFragment
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.coroutines.CoroutineScope
@@ -249,7 +249,7 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
                 val bundle = Bundle()
                 Connectivity.switchDrawer(
                     this@DrawerActivity,
-                    AccountsFragment(),
+                    NewWalletFragment(),
                     Constants.TAG_ACCOUNTS,
                     bundle
                 )

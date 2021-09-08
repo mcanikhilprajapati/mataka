@@ -87,9 +87,13 @@
     <string name="refer">Refer</string>
     <string name="more">More</string>
     <string name="market">Market</string>
+    <string name="deposit_history">Deposit History</string>
+    <string name="withdraw_history">Withdraw History</string>
     <string name="starline">Starline</string>
     <string name="ratan_starline_games">Kalayan Starline</string>
     <string name="quit">Quit</string>
+    <string name="no_deposit_history">No deposit history found</string>
+    <string name="no_withdraw_history">No withdraw history found</string>
     <string name="no_game_list_found_in_the_market">No game list found in the market</string>
     <string name="bidding_is_closed_for_today">Bidding is Closed</string>
     <string name="bidding_is_running_for_today">Bidding is Running</string>

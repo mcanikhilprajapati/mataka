@@ -21,6 +21,7 @@ import com.instantonlinematka.instantonlinematka.view.activity.DrawerActivity
 import com.instantonlinematka.instantonlinematka.view.activity.WelcomeActivity
 import com.instantonlinematka.instantonlinematka.view.activity.totalwinning.TotalWinningActivity
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.account_statement.AccountStatementsFragment
+import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.bankdetails.BankDetailsFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.bonus.BonusFragment
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.funds.AddFundsActivity
 import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.funds.WithdrawFundsFragment
@@ -84,6 +85,15 @@ class MoreFragment : Fragment() {
             Connectivity.switchDrawer(
                 activity as DrawerActivity, WithdrawFundsFragment(),
                 "WITHDRAW_FUND_FRAGMENT", bundle
+            )
+        }
+
+        binding.btnShowBankDetails.setSafeOnClickListener {
+
+            val bundle = Bundle()
+            Connectivity.switchDrawer(
+                activity as DrawerActivity, BankDetailsFragment(),
+                "BANK_DETAILS_FRAGMENT", bundle
             )
         }
 
