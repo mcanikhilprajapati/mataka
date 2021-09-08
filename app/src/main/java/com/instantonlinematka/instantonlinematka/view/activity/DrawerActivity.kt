@@ -118,7 +118,6 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
     }
 
 
-
     private fun openWhatsApp() {
         val smsNumber = "919743971427"
         val isWhatsappInstalled = whatsappInstalledOrNot("com.whatsapp")
@@ -159,7 +158,7 @@ class DrawerActivity : AppCompatActivity(), BottomNavigationView.OnNavigationIte
         if (wallet.isEmpty()) {
             toolbar_Wallet.text = "- - -"
         } else {
-            toolbar_Wallet.text = "₹"+wallet
+            toolbar_Wallet.text = "₹" + wallet
         }
         val notification_count = sessionPrefs.getString(Constants.NOTIFICATION_COUNT)
         if (notification_count.isEmpty() || notification_count.toInt() == 0) {
