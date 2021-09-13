@@ -48,7 +48,8 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgBankName"
                     android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:tint="@color/colorPrimary"
+                    android:layout_height="17dp"
                     android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +59,7 @@
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/txtBankName"
                     android:layout_width="0dp"
+
                     android:layout_height="0dp"
                     android:layout_marginEnd="10dp"
                     android:background="@null"
@@ -90,6 +92,7 @@
                     android:id="@+id/imgBankAccountHolderName"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:tint="@color/colorPrimary"
                     android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +135,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginStart="20dp"
+                    android:tint="@color/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -176,6 +180,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    android:tint="@color/colorPrimary"
                     app:srcCompat="@drawable/ic_bank_ifsc" />
 
                 <androidx.appcompat.widget.AppCompatEditText

@@ -100,7 +100,7 @@ class AddFundsActivity : AppCompatActivity() {
 
         recyclerView.apply {
             layoutManager = GridLayoutManager(
-                contextAddFund, 2,
+                contextAddFund, 1,
                 RecyclerView.VERTICAL, false
             )
             adapter = walletAdapter

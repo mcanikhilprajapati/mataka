@@ -24,7 +24,7 @@
                 android:id="@+id/circleImageView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/app_logo"
+                android:src="@drawable/new_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintHeight_percent="0.6"
@@ -169,6 +169,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRetry"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

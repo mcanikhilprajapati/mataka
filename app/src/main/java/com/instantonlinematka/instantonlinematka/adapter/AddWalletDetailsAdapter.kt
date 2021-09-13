@@ -81,31 +81,31 @@ class AddWalletDetailsAdapter (
             holder.imgWallet.setImageDrawable(ContextCompat.getDrawable(
                 context, R.drawable.ic_bhim
             ))
-            holder.lblWallet.setText(context.getString(R.string.bhim_upi))
+            holder.btnWallet.setText(context.getString(R.string.bhim_upi))
         }
         else if (userPayment.id == 2) {  // Google Pay
             holder.imgWallet.setImageDrawable(ContextCompat.getDrawable(
                 context, R.drawable.google_pay_icon
             ))
-            holder.lblWallet.setText(context.getString(R.string.g_pay))
+            holder.btnWallet.setText(context.getString(R.string.g_pay))
         }
         else if (userPayment.id == 3) {  // PayTm
             holder.imgWallet.setImageDrawable(ContextCompat.getDrawable(
                 context, R.drawable.paytm_icon
             ))
-            holder.lblWallet.setText(context.getString(R.string.paytm))
+            holder.btnWallet.setText(context.getString(R.string.paytm))
         }
         else if (userPayment.id == 4) {  // PhonePe
             holder.imgWallet.setImageDrawable(ContextCompat.getDrawable(
                 context, R.drawable.phone_pay_icon
             ))
-            holder.lblWallet.setText(context.getString(R.string.phone_pe))
+            holder.btnWallet.setText(context.getString(R.string.phone_pe))
         }
         else if (userPayment.id == 5) {  // Bhim
             holder.imgWallet.setImageDrawable(ContextCompat.getDrawable(
                 context, R.drawable.ic_bhim
             ))
-            holder.lblWallet.setText(context.getString(R.string.bhim_upi))
+            holder.btnWallet.setText(context.getString(R.string.bhim_upi))
         }
 
         holder.btnWallet.setOnClickListener {

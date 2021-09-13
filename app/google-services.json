@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "618865058072",
-    "project_id": "tommy-b9982",
-    "storage_bucket": "tommy-b9982.appspot.com"
+    "project_number": "109431230395",
+    "project_id": "matkawala-d2cad",
+    "storage_bucket": "matkawala-d2cad.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:618865058072:android:02efbe32bfd559dfdd3e6d",
+        "mobilesdk_app_id": "1:109431230395:android:37da317fc34f15a20ffe9e",
         "android_client_info": {
           "package_name": "com.tom.game"
         }
       },
       "oauth_client": [
         {
-          "client_id": "618865058072-2toa5ud2bf438tkpb0mqn5figiied8i6.apps.googleusercontent.com",
+          "client_id": "109431230395-o90fuej2knimm6miq1q9093gqahnk2le.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCd-Smu_6tSC1Y8V_t7Csw6ZLyI51cujXc"
+          "current_key": "AIzaSyDIXg349PIGE6nx4tpfaJeSJRqC-aEFqvg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "618865058072-2toa5ud2bf438tkpb0mqn5figiied8i6.apps.googleusercontent.com",
+              "client_id": "109431230395-o90fuej2knimm6miq1q9093gqahnk2le.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

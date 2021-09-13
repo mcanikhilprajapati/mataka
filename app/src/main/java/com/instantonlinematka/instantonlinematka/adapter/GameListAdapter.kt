@@ -302,10 +302,10 @@ class GameListAdapter(val context: Context, val gameList: ArrayList<GameListData
 
         holder.imgPlayButton.setSafeOnClickListener {
 
-            YoYo.with(Techniques.RubberBand)
-                .duration(400)
-                .repeat(0)
-                .playOn(holder.imgPlayButton)
+//            YoYo.with(Techniques.RubberBand)
+//                .duration(400)
+//                .repeat(0)
+//                .playOn(holder.imgPlayButton)
 
             if (GameStatus.contentEquals("0")) {
                 val mBottomSheetDialog: BottomSheetMaterialDialog =

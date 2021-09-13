@@ -28,7 +28,7 @@ class NoticeBoardFragment : Fragment() {
         val view = binding.root
 
         shimmer = Shimmer()
-        shimmer.start(binding.lblPlayRatanGames)
+      //  shimmer.start(binding.lblPlayRatanGames)
 
         val myUrl = """
                     <html>
