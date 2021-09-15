@@ -5,16 +5,39 @@
       <map>
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/btn_red_new.xml" value="0.13240740740740742" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/drawable/ripple_red.xml" value="0.13240740740740742" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_full_sangam.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_game_modes.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_payment_gateway.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_ratan_game_modes.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_ratan_single_game.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_ratan_single_panna_game.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_ratan_triple_panna_game.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_single_panna_game.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_splash.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_total_winning.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/activity_triple_panna_game.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/add_fund_activity.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/alert_submit_game.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/bank_details_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/bidding_history_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/bonus_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/deposti_history_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/forgot_password_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/forgot_passwrod_one_fragment.xml" value="0.264" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/game_rates_fragment.xml" value="0.11574074074074074" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/layout_header_login.xml" value="0.4" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/login_fragment.xml" value="0.176" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/notice_board_fragment.xml" value="0.11574074074074074" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/otp_fragment.xml" value="0.22592592592592592" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/ratan_starline_bid_history_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/ratan_starline_result_history_fragment.xml" value="0.11574074074074074" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/ratan_starline_terms_conditions_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/register_fragment.xml" value="0.264" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/sheet_enter_mobile_number.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/sheet_enter_otp.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/sheet_submit_game.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/welcome_fragment.xml" value="0.264" />
+        <entry key="..\:/Ashvin/Mataka/app/src/main/res/layout/withdraw_funds_fragment.xml" value="0.22592592592592592" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12962962962962962" />
         <entry key="..\:/Ashvin/Mataka/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12831050228310503" />
         <entry key="..\:/WorkSpace/Nikhilbhai/mataka/app/src/main/res/layout/accounts_fragment.xml" value="0.5234375" />

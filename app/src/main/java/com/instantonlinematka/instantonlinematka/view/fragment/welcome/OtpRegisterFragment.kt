@@ -146,7 +146,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
 
         if (Connectivity.isOnline(contextRegister)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
 
             val call = apiInterface.verifyOTP(
@@ -159,7 +159,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
                     response: Response<RegisterResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
                     val responseData = response.body()!!
 
                     val isResponse = responseData.response
@@ -171,7 +171,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
                     }
                     else {
 
-                        binding.wp7progressBar.hideProgressBar()
+                        binding.wp7progressBar.visibility = View.GONE
 
                         val mBottomSheetDialog: BottomSheetMaterialDialog =
                             BottomSheetMaterialDialog.Builder(activity!!)
@@ -190,7 +190,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
 
                 override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -266,7 +266,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
                 response: Response<RegisterResponse>
             ) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val responseData = response.body()!!
 
@@ -332,7 +332,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
                 }
                 else {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -350,7 +350,7 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
 
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(activity!!)

@@ -203,7 +203,7 @@ class WithdrawFundsFragment : Fragment() {
 
     fun getWithDrawBalance() {
 
-        binding.wp7progressBar.showProgressBar()
+        binding.wp7progressBar.visibility = View.VISIBLE
 
         binding.btnWithdrawRequest.isEnabled = false
 
@@ -261,7 +261,7 @@ class WithdrawFundsFragment : Fragment() {
                     mBottomSheetDialog.show()
                 }
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 binding.btnWithdrawRequest.isEnabled = true
             }

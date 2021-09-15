@@ -61,7 +61,7 @@ class NoticeBoardFragment : Fragment() {
                     </html>
                     """
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.webView.settings.setSupportZoom(true)
         binding.webView.settings.javaScriptEnabled = true
@@ -69,7 +69,7 @@ class NoticeBoardFragment : Fragment() {
 
         binding.webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
         }
 

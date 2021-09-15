@@ -26,11 +26,11 @@ import com.instantonlinematka.instantonlinematka.view.fragment.drawer.accounts.f
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import com.test.pg.secure.pgsdkv4.PaymentGatewayPaymentInitializer
 import com.test.pg.secure.pgsdkv4.PaymentParams
-import ir.alirezabdn.wp7progress.WP10ProgressBar
 import kotlinx.android.synthetic.main.add_fund_activity.view.btnWallet
 import kotlinx.android.synthetic.main.add_fund_activity.view.imgWallet
 import kotlinx.android.synthetic.main.item_wallet_details.view.*
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,7 +42,7 @@ class AddWalletDetailsAdapter (
     val activity: AddFundsActivity,
     val walletList: ArrayList<UserPayment>,
     val txtWalletAmount: AppCompatEditText,
-    val wp10ProgressBar: WP10ProgressBar,
+    val wp10ProgressBar: GifImageView,
     val constraintHide: ConstraintLayout,
     val btnHowToAddFund: AppCompatButton,
     val apiInterface: ApiInterface,
@@ -206,7 +206,8 @@ class AddWalletDetailsAdapter (
 
     fun AddFunds() {
 
-        wp10ProgressBar.showProgressBar()
+
+        wp10ProgressBar.visibility = View.VISIBLE
 
         constraintHide.visibility = View.GONE
         btnHowToAddFund.visibility = View.GONE
@@ -275,7 +276,7 @@ class AddWalletDetailsAdapter (
                         }
                     }
 
-                    wp10ProgressBar.hideProgressBar()
+                    wp10ProgressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.VISIBLE
@@ -286,7 +287,7 @@ class AddWalletDetailsAdapter (
                         InitiateTransaction(Constants.GPAY)
                         fromGPAY = true
 
-                        wp10ProgressBar.hideProgressBar()
+                        wp10ProgressBar.visibility = View.GONE
 
                         constraintHide.visibility = View.VISIBLE
                         btnHowToAddFund.visibility = View.VISIBLE
@@ -313,7 +314,7 @@ class AddWalletDetailsAdapter (
 
                 } else {
 
-                    wp10ProgressBar.hideProgressBar()
+                    wp10ProgressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.VISIBLE
@@ -334,7 +335,7 @@ class AddWalletDetailsAdapter (
 
             override fun onFailure(call: Call<AddFundsResponse>, t: Throwable) {
 
-                wp10ProgressBar.hideProgressBar()
+                wp10ProgressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.VISIBLE
@@ -614,7 +615,7 @@ class AddWalletDetailsAdapter (
                     }
                 }
 
-                wp10ProgressBar.hideProgressBar()
+                wp10ProgressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.VISIBLE*/

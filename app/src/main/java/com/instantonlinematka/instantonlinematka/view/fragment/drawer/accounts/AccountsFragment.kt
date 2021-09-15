@@ -167,7 +167,7 @@ class AccountsFragment : Fragment() {
         else {
 
             if (binding.wp10progressBar.isShown) {
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             val mBottomSheetDialog: BottomSheetMaterialDialog =
@@ -187,7 +187,7 @@ class AccountsFragment : Fragment() {
 
     fun makeUserInfoApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         apiInterface = RetrofitClient.getRetrfitInstance()
 
@@ -285,13 +285,13 @@ class AccountsFragment : Fragment() {
                     mBottomSheetDialog.show()
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<UserInfoResponse>, t: Throwable) {
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(activity as DrawerActivity)
@@ -492,7 +492,7 @@ class AccountsFragment : Fragment() {
 
         if (Connectivity.isOnline(contextAccount)) {
 
-            binding.wp10progressBar.showProgressBar()
+            binding.wp10progressBar.visibility = View.VISIBLE
 
             val imageFile: RequestBody =
                 RequestBody.create("multipart/form-data".toMediaTypeOrNull(), file);
@@ -509,7 +509,7 @@ class AccountsFragment : Fragment() {
             call.enqueue(object : Callback<UserInfoResponse> {
                 override fun onFailure(call: Call<UserInfoResponse>, t: Throwable) {
 
-                    binding.wp10progressBar.hideProgressBar()
+                    binding.wp10progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -575,14 +575,14 @@ class AccountsFragment : Fragment() {
                         mBottomSheetDialog.show()
                     }
 
-                    binding.wp10progressBar.hideProgressBar()
+                    binding.wp10progressBar.visibility = View.GONE
 
                 }
 
             })
         } else {
 
-            binding.wp10progressBar.hideProgressBar()
+            binding.wp10progressBar.visibility = View.GONE
 
             val mBottomSheetDialog: BottomSheetMaterialDialog =
                 BottomSheetMaterialDialog.Builder(activity!!)

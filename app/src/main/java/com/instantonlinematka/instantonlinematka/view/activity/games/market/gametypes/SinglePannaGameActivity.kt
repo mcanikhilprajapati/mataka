@@ -49,6 +49,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -444,7 +445,7 @@ class SinglePannaGameActivity : AppCompatActivity() {
 
     fun makeGameDataApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         constraintSingleGame.visibility = View.GONE
@@ -505,13 +506,13 @@ class SinglePannaGameActivity : AppCompatActivity() {
                     constraintSingleGame.visibility = View.GONE
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<GameDataResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 linearHome.visibility = View.VISIBLE
                 constraintSingleGame.visibility = View.GONE
@@ -532,9 +533,9 @@ class SinglePannaGameActivity : AppCompatActivity() {
     }
 
     fun makeRequest(cancelButton: AppCompatButton, submitButton: AppCompatButton,
-                    wp10Progress: WP10ProgressBar, mBottomSheetDialog: BottomSheetDialog) {
+                    wp10Progress: GifImageView, mBottomSheetDialog: BottomSheetDialog) {
 
-        wp10Progress.showProgressBar()
+       wp10Progress.visibility = View.VISIBLE
 
         submitButton.visibility = View.GONE
         cancelButton.visibility = View.GONE
@@ -619,7 +620,7 @@ class SinglePannaGameActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
@@ -628,7 +629,7 @@ class SinglePannaGameActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<BidRequestResponse>, t: Throwable) {
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE

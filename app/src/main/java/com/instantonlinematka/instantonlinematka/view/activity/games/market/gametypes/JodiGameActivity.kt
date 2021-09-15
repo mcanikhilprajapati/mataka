@@ -27,7 +27,6 @@ import com.instantonlinematka.instantonlinematka.retrofit.RetrofitClient
 import com.instantonlinematka.instantonlinematka.utility.*
 import com.instantonlinematka.instantonlinematka.view.activity.NotificationActivity
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
-import ir.alirezabdn.wp7progress.WP10ProgressBar
 import kotlinx.android.synthetic.main.activity_jodi_game.*
 import kotlinx.android.synthetic.main.alert_submit_game.*
 import kotlinx.android.synthetic.main.alert_success.*
@@ -46,6 +45,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -217,7 +217,7 @@ class JodiGameActivity : AppCompatActivity() {
                 btnSubmitButton.setSafeOnClickListener {
 
                     if (Connectivity.isOnline(context)) {
-                        makeRequest(btnCancel, btnSubmitButton, wp10Progress, mBottomSheetDialog)
+                        makeRequest(btnCancel, btnSubmitButton, wp10progressBar2, mBottomSheetDialog)
                     }
                     else {
 
@@ -284,7 +284,7 @@ class JodiGameActivity : AppCompatActivity() {
 
     fun makeGameDataApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar2.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         constraintSingleGame.visibility = View.GONE
@@ -345,13 +345,13 @@ class JodiGameActivity : AppCompatActivity() {
                     constraintSingleGame.visibility = View.GONE
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar2.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<GameDataResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar2.visibility = View.GONE
 
                 linearHome.visibility = View.VISIBLE
                 constraintSingleGame.visibility = View.GONE
@@ -395,9 +395,9 @@ class JodiGameActivity : AppCompatActivity() {
     }
 
     fun makeRequest(cancelButton: AppCompatButton, submitButton: AppCompatButton,
-                    wp10Progress: WP10ProgressBar, mBottomSheetDialog: BottomSheetDialog) {
+                    wp10Progress: GifImageView, mBottomSheetDialog: BottomSheetDialog) {
 
-        wp10Progress.showProgressBar()
+        wp10Progress.visibility = View.VISIBLE
 
         submitButton.visibility = View.GONE
         cancelButton.visibility = View.GONE
@@ -482,7 +482,7 @@ class JodiGameActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
@@ -491,7 +491,7 @@ class JodiGameActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<BidRequestResponse>, t: Throwable) {
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE

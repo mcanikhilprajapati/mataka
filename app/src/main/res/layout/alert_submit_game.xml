@@ -376,11 +376,15 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout21" />
 
-                        <ir.alirezabdn.wp7progress.WP10ProgressBar
+
+
+                        <pl.droidsonroids.gif.GifImageView
                             android:id="@+id/progressBar1"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/loader"
                             android:layout_marginEnd="15dp"
+                            android:visibility="gone"
                             app:animationDuration="1500"
                             app:indicatorColor="@color/colorPrimary"
                             app:indicatorHeight="2"

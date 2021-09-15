@@ -149,7 +149,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
         if (Connectivity.isOnline(contextForgot)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             val call = apiInterface.forgotPassword(
                 mobileNumber, MessageID
@@ -162,7 +162,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
                     response: Response<ForgotPasswordResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     startSMSListener()
 
@@ -226,7 +226,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
                 override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -265,7 +265,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
         if (Connectivity.isOnline(contextForgot)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             val call = apiInterface.verifyForgotPassword(
                 mobileNumber, otp
@@ -277,7 +277,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
                     response: Response<ForgotPasswordResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val responseData = response.body()!!
 
@@ -310,7 +310,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
                 override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -346,7 +346,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
     fun makeResetPasswordApiCall() {
 
-        binding.wp7progressBar.showProgressBar()
+        binding.wp7progressBar.visibility = View.VISIBLE
 
         val call = apiInterface.resetPassword(
             mobileNumber, password, confirmPassword
@@ -358,7 +358,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
                 response: Response<ForgotPasswordResponse>
             ) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val responseData = response.body()!!
 
@@ -388,7 +388,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
                 } else {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -408,7 +408,7 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
 
             override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(activity!!)

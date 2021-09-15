@@ -84,7 +84,7 @@ class BiddingHistoryFragment : Fragment() {
 
                 biddingByGameList.clear()
                 adapter.notifyDataSetChanged()
-                binding.wp10progressBar.showProgressBar()
+                binding.wp10progressBar.visibility = View.VISIBLE
 
                 binding.lblMarketName.setText(
                     biddingHistoryList.get(which).game_type_name
@@ -137,7 +137,7 @@ class BiddingHistoryFragment : Fragment() {
 
     fun makeBiddingHistoryApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         val call = apiInterface.getBiddingHistory(
             sessionPrefs.getString(Constants.USER_ID)
@@ -175,7 +175,7 @@ class BiddingHistoryFragment : Fragment() {
                     getGameHistoryByGame("")
                 } else {
 
-                    binding.wp10progressBar.hideProgressBar()
+                    binding.wp10progressBar.visibility = View.GONE
 
                     binding.linearHome.visibility = View.VISIBLE
                     binding.recyclerView.visibility = View.GONE
@@ -185,7 +185,7 @@ class BiddingHistoryFragment : Fragment() {
 
             override fun onFailure(call: Call<BiddingHistoryResponse>, t: Throwable) {
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 binding.linearHome.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE
@@ -296,12 +296,12 @@ class BiddingHistoryFragment : Fragment() {
 
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<BiddingHistoryByGame>, t: Throwable) {
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 binding.linearHome.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE

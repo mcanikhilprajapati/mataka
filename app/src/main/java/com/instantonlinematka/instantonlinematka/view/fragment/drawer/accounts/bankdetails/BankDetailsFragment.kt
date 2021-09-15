@@ -172,7 +172,7 @@ class BankDetailsFragment : Fragment() {
 
     fun makeUserInfoApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.nestedView.visibility = View.GONE
         binding.linearHome.visibility = View.GONE
@@ -271,13 +271,13 @@ class BankDetailsFragment : Fragment() {
 
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<UserInfoResponse>, t: Throwable) {
 
-                binding.wp10progressBar.showProgressBar()
+                binding.wp10progressBar.visibility = View.VISIBLE
 
                 binding.nestedView.visibility = View.GONE
                 binding.linearHome.visibility = View.VISIBLE
@@ -304,7 +304,7 @@ class BankDetailsFragment : Fragment() {
 
         binding.lblVerifyingDetails.visibility = View.VISIBLE
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.nestedView.visibility = View.GONE
         binding.linearHome.visibility = View.GONE
@@ -392,7 +392,7 @@ class BankDetailsFragment : Fragment() {
 
                         binding.lblVerifyingDetails.visibility = View.GONE
 
-                        binding.wp10progressBar.hideProgressBar()
+                        binding.wp10progressBar.visibility = View.GONE
 
                         binding.nestedView.visibility = View.VISIBLE
                         binding.linearHome.visibility = View.GONE
@@ -415,7 +415,7 @@ class BankDetailsFragment : Fragment() {
 
                     binding.lblVerifyingDetails.visibility = View.GONE
 
-                    binding.wp10progressBar.hideProgressBar()
+                    binding.wp10progressBar.visibility = View.GONE
 
                     binding.nestedView.visibility = View.VISIBLE
                     binding.linearHome.visibility = View.GONE
@@ -437,7 +437,7 @@ class BankDetailsFragment : Fragment() {
 
             override fun onFailure(call: Call<CheckStatusResponse>, t: Throwable) {
 
-                binding.wp10progressBar.showProgressBar()
+                binding.wp10progressBar.visibility = View.VISIBLE
 
                 binding.nestedView.visibility = View.GONE
                 binding.linearHome.visibility = View.VISIBLE
@@ -521,7 +521,7 @@ class BankDetailsFragment : Fragment() {
 
                         }
 
-                        binding.wp10progressBar.hideProgressBar()
+                        binding.wp10progressBar.visibility = View.GONE
                     }
 
                 } else {
@@ -547,7 +547,7 @@ class BankDetailsFragment : Fragment() {
 
             override fun onFailure(call: Call<BankDetailsResponse>, t: Throwable) {
 
-                binding.wp10progressBar.showProgressBar()
+                binding.wp10progressBar.visibility = View.VISIBLE
 
                 binding.nestedView.visibility = View.GONE
                 binding.linearHome.visibility = View.VISIBLE
@@ -628,13 +628,13 @@ class BankDetailsFragment : Fragment() {
 
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<BankDetailsResponse>, t: Throwable) {
 
-                binding.wp10progressBar.showProgressBar()
+                binding.wp10progressBar.visibility = View.VISIBLE
 
                 binding.nestedView.visibility = View.GONE
                 binding.linearHome.visibility = View.VISIBLE

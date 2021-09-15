@@ -112,7 +112,7 @@ class WelcomeFragment : Fragment() {
 
         if (Connectivity.isOnline(contextWelcome)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             binding.txtMobileNumber.isEnabled = false
 
@@ -124,7 +124,7 @@ class WelcomeFragment : Fragment() {
                     response: Response<WelcomeResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val responseData = response.body()!!
 
@@ -150,7 +150,7 @@ class WelcomeFragment : Fragment() {
 
                 override fun onFailure(call: Call<WelcomeResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     binding.txtMobileNumber.isEnabled = true
 

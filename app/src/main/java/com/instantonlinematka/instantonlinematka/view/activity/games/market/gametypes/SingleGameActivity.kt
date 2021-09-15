@@ -15,8 +15,6 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.instantonlinematka.instantonlinematka.R
@@ -32,23 +30,32 @@ import com.instantonlinematka.instantonlinematka.view.activity.NotificationActiv
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
 import ir.alirezabdn.wp7progress.WP10ProgressBar
 import kotlinx.android.synthetic.main.activity_single_game.*
+import kotlinx.android.synthetic.main.activity_single_game.btnNotification
+import kotlinx.android.synthetic.main.activity_single_game.btnProceed
+import kotlinx.android.synthetic.main.activity_single_game.circleImageView
+import kotlinx.android.synthetic.main.activity_single_game.constraintSingleGame
+import kotlinx.android.synthetic.main.activity_single_game.lblCloseTimeAnswer
+import kotlinx.android.synthetic.main.activity_single_game.lblDate
+import kotlinx.android.synthetic.main.activity_single_game.lblGameType
+import kotlinx.android.synthetic.main.activity_single_game.lblMarketNameAnswer
+import kotlinx.android.synthetic.main.activity_single_game.lblNumbersAnswer
+import kotlinx.android.synthetic.main.activity_single_game.lblOpenTimeAnswer
+import kotlinx.android.synthetic.main.activity_single_game.lblStatusAnswer
+import kotlinx.android.synthetic.main.activity_single_game.lblTotalPointsAnswer
+import kotlinx.android.synthetic.main.activity_single_game.linearHome
+import kotlinx.android.synthetic.main.activity_single_game.recyclerView
+import kotlinx.android.synthetic.main.activity_single_game.toolbar_Wallet
+import kotlinx.android.synthetic.main.activity_single_game.toolbar_not_number
 import kotlinx.android.synthetic.main.alert_game_type.*
 import kotlinx.android.synthetic.main.alert_submit_game.*
 import kotlinx.android.synthetic.main.alert_success.*
 import kotlinx.android.synthetic.main.sheet_submit_game.*
-import kotlinx.android.synthetic.main.sheet_submit_game.bidPointContainer
-import kotlinx.android.synthetic.main.sheet_submit_game.btnCancel
-import kotlinx.android.synthetic.main.sheet_submit_game.btnSubmitButton
-import kotlinx.android.synthetic.main.sheet_submit_game.lblTotalBidAmountAnswer
-import kotlinx.android.synthetic.main.sheet_submit_game.lblTotalBidAnswer
-import kotlinx.android.synthetic.main.sheet_submit_game.lblWalletAfterDeductionAnswer
-import kotlinx.android.synthetic.main.sheet_submit_game.lblWalletBeforeDeductionAnswer
-import kotlinx.android.synthetic.main.sheet_submit_game.progressBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -286,7 +293,7 @@ class SingleGameActivity : AppCompatActivity() {
 
     fun makeGameDataApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar2.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         constraintSingleGame.visibility = View.GONE
@@ -349,13 +356,13 @@ class SingleGameActivity : AppCompatActivity() {
                     constraintSingleGame.visibility = View.GONE
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar2.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<GameDataResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar2.visibility = View.GONE
 
                 linearHome.visibility = View.VISIBLE
                 constraintSingleGame.visibility = View.GONE
@@ -399,9 +406,9 @@ class SingleGameActivity : AppCompatActivity() {
     }
 
     fun makeRequest(cancelButton: AppCompatButton, submitButton: AppCompatButton,
-                    wp10Progress: WP10ProgressBar, mBottomSheetDialog: Dialog) {
+                    wp10Progress: GifImageView, mBottomSheetDialog: Dialog) {
 
-        wp10Progress.showProgressBar()
+       wp10Progress.visibility = View.VISIBLE
 
         submitButton.visibility = View.GONE
         cancelButton.visibility = View.GONE
@@ -486,7 +493,7 @@ class SingleGameActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
@@ -495,7 +502,7 @@ class SingleGameActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<BidRequestResponse>, t: Throwable) {
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE

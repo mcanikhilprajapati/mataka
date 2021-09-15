@@ -121,7 +121,7 @@ class ForgotPasswordOneFragment : Fragment() {
 
         if (Connectivity.isOnline(contextForgot)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             binding.txtMobileNumber.isEnabled = false
 
@@ -136,7 +136,7 @@ class ForgotPasswordOneFragment : Fragment() {
                     response: Response<ForgotPasswordResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
                     val bundle = Bundle()
                         bundle.putString("mobile", mobileNumber)
                         Connectivity.switchWelcome(
@@ -168,7 +168,7 @@ class ForgotPasswordOneFragment : Fragment() {
 
                 override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     binding.txtMobileNumber.isEnabled = true
 

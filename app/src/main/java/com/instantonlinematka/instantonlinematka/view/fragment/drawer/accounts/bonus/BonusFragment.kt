@@ -99,7 +99,7 @@ class BonusFragment : Fragment() {
 
     fun makeBonusApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.linearHome.visibility = View.GONE
         binding.recyclerView.visibility = View.GONE
@@ -152,12 +152,12 @@ class BonusFragment : Fragment() {
 
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<BonusResponse>, t: Throwable) {
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(activity as DrawerActivity)

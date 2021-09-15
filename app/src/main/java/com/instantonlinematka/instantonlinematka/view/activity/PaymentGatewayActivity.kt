@@ -1,6 +1,7 @@
 package com.instantonlinematka.instantonlinematka.view.activity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.utility.Constants
@@ -15,7 +16,7 @@ class PaymentGatewayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_gateway)
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         val rnd = Random()
         val n = 100000 + rnd.nextInt(900000)

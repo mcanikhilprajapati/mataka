@@ -141,7 +141,7 @@ class RatanStarlineResultHistoryFragment : Fragment() {
 
     fun makeResultHistoryApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.linearHome.visibility = View.GONE
         binding.lblPickDate.visibility = View.GONE
@@ -194,12 +194,12 @@ class RatanStarlineResultHistoryFragment : Fragment() {
                     binding.recyclerView.visibility = View.GONE
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<RatanStarlineGameResponse>, t: Throwable) {
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 binding.linearHome.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE

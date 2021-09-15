@@ -100,7 +100,7 @@ class LoginFragment : Fragment() {
 
         if (Connectivity.isOnline(contextLogin)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             val call = apiInterface.login(
                 mobileNumber, password, fcm_token, "IOM21"
@@ -112,7 +112,7 @@ class LoginFragment : Fragment() {
                     response: Response<LoginResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val responseData = response.body()!!
 
@@ -166,7 +166,7 @@ class LoginFragment : Fragment() {
                     }
                     else {
 
-                        binding.wp7progressBar.hideProgressBar()
+                        binding.wp7progressBar.visibility = View.GONE
 
                         val mBottomSheetDialog: BottomSheetMaterialDialog =
                             BottomSheetMaterialDialog.Builder(activity!!)
@@ -185,7 +185,7 @@ class LoginFragment : Fragment() {
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)

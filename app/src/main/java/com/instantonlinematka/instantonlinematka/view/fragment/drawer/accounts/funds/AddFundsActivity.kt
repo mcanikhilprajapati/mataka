@@ -265,7 +265,7 @@ class AddFundsActivity : AppCompatActivity() {
 
     fun makeWalletDetailsApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         constraintHide.visibility = View.GONE
         btnHowToAddFund.visibility = View.GONE
@@ -288,7 +288,7 @@ class AddFundsActivity : AppCompatActivity() {
 
                     paymentList.clear()
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.GONE //
@@ -312,7 +312,7 @@ class AddFundsActivity : AppCompatActivity() {
 
                 } else {
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.GONE
                     btnHowToAddFund.visibility = View.GONE
@@ -334,7 +334,7 @@ class AddFundsActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<WalletBalanceResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //
@@ -425,7 +425,7 @@ class AddFundsActivity : AppCompatActivity() {
 
     fun AddFunds() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         constraintHide.visibility = View.GONE
         btnHowToAddFund.visibility = View.GONE
@@ -473,7 +473,7 @@ class AddFundsActivity : AppCompatActivity() {
 
                 } else {
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.GONE //
@@ -494,7 +494,7 @@ class AddFundsActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<AddFundsResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //
@@ -640,7 +640,7 @@ class AddFundsActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //
@@ -740,7 +740,7 @@ class AddFundsActivity : AppCompatActivity() {
 
     fun makeRequestAddFundApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         constraintHide.visibility = View.GONE
         btnHowToAddFund.visibility = View.GONE
@@ -785,14 +785,14 @@ class AddFundsActivity : AppCompatActivity() {
 
                     getWalletDetails()
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.GONE //
 
                 } else {
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     constraintHide.visibility = View.VISIBLE
                     btnHowToAddFund.visibility = View.GONE //
@@ -815,7 +815,7 @@ class AddFundsActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<AddFundsResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //
@@ -1228,7 +1228,7 @@ class AddFundsActivity : AppCompatActivity() {
     // Get Status
     fun getStatus() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         constraintHide.visibility = View.GONE
         btnHowToAddFund.visibility = View.GONE
@@ -1245,7 +1245,7 @@ class AddFundsActivity : AppCompatActivity() {
                 response: Response<PaymentStatusResponse>
             ) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //
@@ -1320,7 +1320,7 @@ class AddFundsActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<PaymentStatusResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 constraintHide.visibility = View.VISIBLE
                 btnHowToAddFund.visibility = View.GONE //

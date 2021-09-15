@@ -22,7 +22,6 @@ import com.instantonlinematka.instantonlinematka.retrofit.RetrofitClient
 import com.instantonlinematka.instantonlinematka.utility.*
 import com.instantonlinematka.instantonlinematka.view.activity.NotificationActivity
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
-import ir.alirezabdn.wp7progress.WP10ProgressBar
 import kotlinx.android.synthetic.main.activity_double_panna_game.*
 import kotlinx.android.synthetic.main.activity_double_panna_game.btnNotification
 import kotlinx.android.synthetic.main.activity_double_panna_game.btnProceed
@@ -51,6 +50,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -417,7 +417,7 @@ class DoublePannaGameActivity : AppCompatActivity() {
 
     fun makeGameDataApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         constraintSingleGame.visibility = View.GONE
@@ -478,13 +478,13 @@ class DoublePannaGameActivity : AppCompatActivity() {
                     constraintSingleGame.visibility = View.GONE
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
             }
 
             override fun onFailure(call: Call<GameDataResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 linearHome.visibility = View.VISIBLE
                 constraintSingleGame.visibility = View.GONE
@@ -505,12 +505,12 @@ class DoublePannaGameActivity : AppCompatActivity() {
     }
 
     fun makeRequest(cancelButton: AppCompatButton, submitButton: AppCompatButton,
-                    wp10Progress: WP10ProgressBar, mBottomSheetDialog: BottomSheetDialog) {
+                    wp10Progress: GifImageView, mBottomSheetDialog: BottomSheetDialog) {
 
         submitButton.visibility = View.GONE
         cancelButton.visibility = View.GONE
 
-        wp10Progress.showProgressBar()
+       wp10Progress.visibility = View.VISIBLE
 
         val UniqueSessionID = UUID.randomUUID().toString()
 
@@ -593,7 +593,7 @@ class DoublePannaGameActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
@@ -602,7 +602,7 @@ class DoublePannaGameActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<BidRequestResponse>, t: Throwable) {
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE

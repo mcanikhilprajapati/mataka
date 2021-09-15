@@ -210,7 +210,7 @@ class DepositHistoryFragment : Fragment() {
 
     fun getDepostiHistoryListApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.linearHome.visibility = View.GONE
         binding.recyclerView.visibility = View.GONE
@@ -256,13 +256,13 @@ class DepositHistoryFragment : Fragment() {
                     binding.txtTodayMarket.visibility= View.GONE
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<DepositHistoryResponse>, t: Throwable) {
 
                 binding.swipeRefreshLayout.isRefreshing = false
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 binding.linearHome.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE

@@ -84,7 +84,7 @@ class NotificationActivity : AppCompatActivity() {
 
     fun makeNotificationApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         recyclerView.visibility = View.GONE
@@ -139,12 +139,12 @@ class NotificationActivity : AppCompatActivity() {
 
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<NotificationResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(this@NotificationActivity)

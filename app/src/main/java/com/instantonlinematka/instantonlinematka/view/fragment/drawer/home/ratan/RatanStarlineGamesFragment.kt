@@ -188,7 +188,7 @@ class RatanStarlineGamesFragment : Fragment(), onTimerCompleteListener2 {
 
     fun makeRatanStarlineGameListApiCall() {
 
-        binding.wp10progressBar.showProgressBar()
+        binding.wp10progressBar.visibility = View.VISIBLE
 
         binding.linearHome.visibility = View.GONE
         binding.recyclerView.visibility = View.GONE
@@ -242,12 +242,12 @@ class RatanStarlineGamesFragment : Fragment(), onTimerCompleteListener2 {
                     binding.recyclerView.visibility = View.GONE
                 }
 
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<RatanStarlineGameResponse>, t: Throwable) {
                 binding.swipeRefreshLayout.isRefreshing=false
-                binding.wp10progressBar.hideProgressBar()
+                binding.wp10progressBar.visibility = View.GONE
 
                 binding.linearHome.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE

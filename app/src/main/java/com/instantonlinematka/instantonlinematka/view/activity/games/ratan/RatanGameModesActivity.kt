@@ -137,7 +137,7 @@ class RatanGameModesActivity : AppCompatActivity() {
 
     fun makeGameCategoryApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         recyclerView.visibility = View.GONE
 
@@ -237,7 +237,7 @@ class RatanGameModesActivity : AppCompatActivity() {
 
                     adapter.notifyDataSetChanged()
 
-                    wp10progressBar.hideProgressBar()
+                    wp10progressBar.visibility = View.GONE
 
                     recyclerView.visibility = View.VISIBLE
 

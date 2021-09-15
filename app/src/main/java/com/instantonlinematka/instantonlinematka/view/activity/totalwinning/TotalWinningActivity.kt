@@ -154,7 +154,7 @@ class TotalWinningActivity : AppCompatActivity() {
 
     fun makeWinningApiCall(type: String) {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         linearHome.visibility = View.GONE
         constraint.visibility = View.GONE
@@ -203,13 +203,13 @@ class TotalWinningActivity : AppCompatActivity() {
                     constraint.visibility = View.GONE
                 }
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
             }
 
             @SuppressLint("RestrictedApi")
             override fun onFailure(call: Call<TotalWinningAmountResponse>, t: Throwable) {
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 linearHome.visibility = View.VISIBLE
                 constraint.visibility = View.GONE

@@ -151,7 +151,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
         if (Connectivity.isOnline(contextRegister)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             val call = apiInterface.sendOTP(
                 mobileNumber, mobileNumber, MessageID
@@ -164,7 +164,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
                     response: Response<RegisterResponse>
                 ) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val responseData = response.body()!!
 
@@ -234,7 +234,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
                 override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -274,7 +274,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
         if (Connectivity.isOnline(contextRegister)) {
 
-            binding.wp7progressBar.showProgressBar()
+            binding.wp7progressBar.visibility = View.VISIBLE
 
             val call = apiInterface.verifyOTP(
                 mobileNumber, mobileNumber, otp
@@ -298,7 +298,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
                     }
                     else {
 
-                        binding.wp7progressBar.hideProgressBar()
+                        binding.wp7progressBar.visibility = View.GONE
 
                         val mBottomSheetDialog: BottomSheetMaterialDialog =
                             BottomSheetMaterialDialog.Builder(activity!!)
@@ -317,7 +317,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
                 override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -365,7 +365,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
                 response: Response<RegisterResponse>
             ) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val responseData = response.body()!!
 
@@ -431,7 +431,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
                 }
                 else {
 
-                    binding.wp7progressBar.hideProgressBar()
+                    binding.wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(activity!!)
@@ -449,7 +449,7 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
 
-                binding.wp7progressBar.hideProgressBar()
+                binding.wp7progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(activity!!)

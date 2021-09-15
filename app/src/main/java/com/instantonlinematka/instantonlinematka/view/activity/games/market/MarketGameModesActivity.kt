@@ -153,7 +153,7 @@ class MarketGameModesActivity : AppCompatActivity() {
 
     fun makeGameCategoryApiCall() {
 
-        wp10progressBar.showProgressBar()
+        wp10progressBar.visibility = View.VISIBLE
 
         recyclerView.visibility = View.GONE
 
@@ -475,7 +475,7 @@ class MarketGameModesActivity : AppCompatActivity() {
 
                 adapter.notifyDataSetChanged()
 
-                wp10progressBar.hideProgressBar()
+                wp10progressBar.visibility = View.GONE
 
                 recyclerView.visibility = View.VISIBLE
             }

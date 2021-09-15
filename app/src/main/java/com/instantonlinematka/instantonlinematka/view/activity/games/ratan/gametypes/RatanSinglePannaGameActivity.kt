@@ -52,6 +52,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import pl.droidsonroids.gif.GifImageView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -433,12 +434,12 @@ class RatanSinglePannaGameActivity : AppCompatActivity() {
     }
 
     fun makeRequest(cancelButton: AppCompatButton, submitButton: AppCompatButton,
-                    wp10Progress: WP10ProgressBar, mBottomSheetDialog: BottomSheetDialog) {
+                    wp10Progress: GifImageView, mBottomSheetDialog: BottomSheetDialog) {
 
         submitButton.visibility = View.GONE
         cancelButton.visibility = View.GONE
 
-        wp10Progress.showProgressBar()
+       wp10Progress.visibility = View.VISIBLE
 
         val pointsParams = itemsToConvert(pannaGameList).toString()
 
@@ -516,7 +517,7 @@ class RatanSinglePannaGameActivity : AppCompatActivity() {
                     }
                 }
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
@@ -525,7 +526,7 @@ class RatanSinglePannaGameActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<BidRequestResponse>, t: Throwable) {
 
-                wp10Progress.hideProgressBar()
+                wp10Progress.visibility = View.GONE
 
                 submitButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE

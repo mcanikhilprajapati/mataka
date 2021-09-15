@@ -55,6 +55,7 @@
         </ImageView>
     </LinearLayout>
 
+
     <ir.alirezabdn.wp7progress.WP7ProgressBar
         android:id="@+id/wp7progressBar"
         android:layout_width="match_parent"
