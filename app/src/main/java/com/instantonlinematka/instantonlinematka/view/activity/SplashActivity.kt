@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -171,7 +172,7 @@ class SplashActivity : AppCompatActivity() {
 
     fun ProceedifPermitted() {
 
-        wp7progressBar.showProgressBar()
+        wp7progressBar.visibility = View.VISIBLE
 
         //getInternetTime()
         // After Removing Internet cut from here
@@ -189,7 +190,7 @@ class SplashActivity : AppCompatActivity() {
                         firebaseToken = it.result!!.token
                         sessionPrefs.addString(Constants.FCM_KEY, firebaseToken)
 
-                        wp7progressBar.hideProgressBar()
+                        wp7progressBar.visibility = View.GONE
 
                         val intent = Intent(context, WelcomeActivity::class.java)
                         startActivity(intent)
@@ -200,7 +201,7 @@ class SplashActivity : AppCompatActivity() {
 
                 if (sessionPrefs.getString(Constants.USER_ID).isEmpty()) {
 
-                    wp7progressBar.hideProgressBar()
+                    wp7progressBar.visibility = View.GONE
 
                     val intent = Intent(context, WelcomeActivity::class.java)
                     startActivity(intent)
@@ -270,7 +271,7 @@ class SplashActivity : AppCompatActivity() {
                             .setCancelable(false)
                             .setPositiveButton(getString(R.string.okay)) { dialogInterface, which ->
                                 dialogInterface.dismiss()
-                                wp7progressBar.hideProgressBar()
+                                wp7progressBar.visibility = View.GONE
                             }
                             .build()
 
@@ -293,7 +294,7 @@ class SplashActivity : AppCompatActivity() {
                                     firebaseToken = it.result!!.token
                                     sessionPrefs.addString(Constants.FCM_KEY, firebaseToken)
 
-                                    wp7progressBar.hideProgressBar()
+                                    wp7progressBar.visibility = View.GONE
 
                                     val intent = Intent(context, WelcomeActivity::class.java)
                                     startActivity(intent)
@@ -304,7 +305,7 @@ class SplashActivity : AppCompatActivity() {
 
                             if (sessionPrefs.getString(Constants.USER_ID).isEmpty()) {
 
-                                wp7progressBar.hideProgressBar()
+                                wp7progressBar.visibility = View.GONE
 
                                 val intent = Intent(context, WelcomeActivity::class.java)
                                 startActivity(intent)
@@ -328,7 +329,7 @@ class SplashActivity : AppCompatActivity() {
             makeUserInfoApiCall()
         } else {
             if (wp7progressBar.isShown) {
-                wp7progressBar.hideProgressBar()
+                wp7progressBar.visibility = View.GONE
             }
 
             val mBottomSheetDialog: BottomSheetMaterialDialog =
@@ -361,7 +362,7 @@ class SplashActivity : AppCompatActivity() {
                 response: Response<UserInfoResponse>
             ) {
 
-                wp7progressBar.hideProgressBar()
+                wp7progressBar.visibility = View.GONE
 
                 val responseData = response.body()!!
 
@@ -415,7 +416,7 @@ class SplashActivity : AppCompatActivity() {
 
                 } else {
 
-                    wp7progressBar.hideProgressBar()
+                    wp7progressBar.visibility = View.GONE
 
                     val mBottomSheetDialog: BottomSheetMaterialDialog =
                         BottomSheetMaterialDialog.Builder(this@SplashActivity)
@@ -435,7 +436,7 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<UserInfoResponse>, t: Throwable) {
 
-                wp7progressBar.hideProgressBar()
+                wp7progressBar.visibility = View.GONE
 
                 val mBottomSheetDialog: BottomSheetMaterialDialog =
                     BottomSheetMaterialDialog.Builder(this@SplashActivity)
