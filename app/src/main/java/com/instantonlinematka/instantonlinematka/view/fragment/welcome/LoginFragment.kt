@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.instantonlinematka.instantonlinematka.R
 import com.instantonlinematka.instantonlinematka.databinding.LoginFragmentBinding
@@ -73,18 +74,22 @@ class LoginFragment : Fragment() {
                 binding.txtMobileNumber.requestFocus()
             }
             else if (password.isEmpty()) {
+
                 binding.txtPassword.error = getString(R.string.please_enter_the_password)
                 binding.txtPassword.requestFocus()
+
+
             }
             else {
                 makeLoginApiCall()
             }
         }
 
-        binding.lblForgotPassword.setSafeOnClickListener {
+        binding.lblForgotPasswordNew.setSafeOnClickListener {
+           // Toast.makeText(contextLogin,"Forgot",Toast.LENGTH_SHORT).show()
             val bundle = Bundle()
             bundle.putString("phone", mobileNumber)
-            Connectivity.switchWelcome((activity as WelcomeActivity), ForgotPasswordFragment(),
+            Connectivity.switchWelcome((activity as WelcomeActivity), ForgotPasswordOneFragment(),
             "FORGOT_PASSWORD", bundle)
         }
 

@@ -75,32 +75,32 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
         val appSignatureHelper = AppSignatureHelper(contextForgot)
         MessageID = appSignatureHelper.appSignatures.get(0);
 
-        val mBottomSheetDialog = BottomSheetDialog(activity!!)
-        val sheetView: View =
-            activity!!.layoutInflater.inflate(R.layout.sheet_enter_mobile_number, null)
-        mBottomSheetDialog.setContentView(sheetView)
-        mBottomSheetDialog.setCancelable(false)
-        mBottomSheetDialog.show()
+//        val mBottomSheetDialog = BottomSheetDialog(activity!!)
+//        val sheetView: View =
+//            activity!!.layoutInflater.inflate(R.layout.sheet_enter_mobile_number, null)
+//        mBottomSheetDialog.setContentView(sheetView)
+//        mBottomSheetDialog.setCancelable(false)
+//        mBottomSheetDialog.show()
 
-        val txtMobileNumber: AppCompatEditText = sheetView.findViewById(R.id.txtMobileNumber)
-        txtMobileNumber.setText(mobileNumber)
-
-        val btnSendOTP: AppCompatButton = sheetView.findViewById(R.id.btnSendOTP)
-
-        btnSendOTP.setSafeOnClickListener {
-
-            mobileNumber = txtMobileNumber.text.toString().trim()
-
-            if (mobileNumber.isEmpty()) {
-                txtMobileNumber.error = getString(R.string.mobile_number_required)
-                txtMobileNumber.requestFocus()
-            } else if (mobileNumber.length != 10) {
-                txtMobileNumber.error = getString(R.string.mobie_number_must_be_ten_digit)
-                txtMobileNumber.requestFocus()
-            } else {
-                makeSendOTPApiCall(mBottomSheetDialog)
-            }
-        }
+//        val txtMobileNumber: AppCompatEditText = sheetView.findViewById(R.id.txtMobileNumber)
+//        txtMobileNumber.setText(mobileNumber)
+//
+//        val btnSendOTP: AppCompatButton = sheetView.findViewById(R.id.btnSendOTP)
+//
+//        btnSendOTP.setSafeOnClickListener {
+//
+//            mobileNumber = txtMobileNumber.text.toString().trim()
+//
+//            if (mobileNumber.isEmpty()) {
+//                txtMobileNumber.error = getString(R.string.mobile_number_required)
+//                txtMobileNumber.requestFocus()
+//            } else if (mobileNumber.length != 10) {
+//                txtMobileNumber.error = getString(R.string.mobie_number_must_be_ten_digit)
+//                txtMobileNumber.requestFocus()
+//            } else {
+//                makeSendOTPApiCall(mBottomSheetDialog)
+//            }
+//        }
 
         binding.btnResetPassword.setSafeOnClickListener {
 
@@ -173,6 +173,13 @@ class ForgotPasswordFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveList
                     if (isResponse) {
 
                         bottomInitial.dismiss()
+//
+//                        val bundle = Bundle()
+//                        bundle.putString("mobile", mobileNumber)
+//                        Connectivity.switchWelcome(
+//                            activity!!, OtpFragment(),
+//                            "OTP_FRAGMENT", bundle
+//                        )
 
                         val mBottomSheetDialog = BottomSheetDialog(activity!!)
                         val sheetView: View =

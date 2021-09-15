@@ -16,38 +16,15 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/theme_curve_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.20"
-            app:srcCompat="@drawable/app_logo"
-            android:visibility="gone"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/lblLogin"
-            android:layout_width="wrap_content"
+        <include
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/welcome"
-            android:textColor="@color/White"
-            android:textSize="24sp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+            layout="@layout/layout_header_login" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ir.alirezabdn.wp7progress.WP7ProgressBar
@@ -74,6 +51,7 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="sans-serif"
         android:text="@string/welcome1"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +64,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="@dimen/_50sdp"
+        android:visibility="gone"
         android:fontFamily="sans-serif"
         android:text="@string/enter_your"
         android:textColor="@color/black"
@@ -97,15 +76,14 @@
         android:id="@+id/lblLogin3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="@dimen/_70sdp"
-        android:fontFamily="sans-serif"
-        android:text="@string/mobile_number"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/enter_mobile_number_d"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -114,7 +92,7 @@
         android:layout_height="@dimen/_42sdp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="@dimen/_125sdp"
+        android:layout_marginTop="@dimen/_80sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline">
@@ -136,14 +114,14 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fontFamily="@font/helvetica"
-            android:hint="@string/enter_mobile_number_d"
+            android:hint="@string/mobile_number"
             android:maxLines="1"
             android:textColor="@color/Black"
             android:textSize="16sp"
             android:inputType="number"
             android:maxLength="10"
-            android:theme="@style/EditTextHintWhite"
-            app:backgroundTint="@color/black"
+
+            app:backgroundTint="@color/Gray"
              android:shadowColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -171,8 +149,8 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
         android:layout_marginTop="@dimen/_25sdp"
-        android:background="@drawable/ripple_red"
-        android:fontFamily="@font/quicksand"
+        android:background="@drawable/btn_red_new"
+        android:fontFamily="@font/montserrat"
         android:text="@string/continue_"
         android:textAllCaps="false"
         android:textColor="@color/White"

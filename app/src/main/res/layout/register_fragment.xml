@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,37 +19,15 @@
         android:id="@+id/constraintLayout1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/theme_curve_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.20"
-            app:srcCompat="@drawable/app_logo" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:visibility="gone"
-            android:id="@+id/lblLogin"
-            android:layout_width="wrap_content"
+        <include
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/registration"
-            android:textColor="@color/White"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            layout="@layout/layout_header_login" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,20 +49,21 @@
         android:id="@+id/lblLogin10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="sans-serif"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/register"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:orientation="vertical"
@@ -107,8 +90,7 @@
                 android:id="@+id/txtMobileNumber"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
+
                 android:fontFamily="@font/helvetica"
                 android:hint="@string/mobile_number"
                 android:inputType="number"
@@ -156,8 +138,6 @@
                 android:id="@+id/txtPassword"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
                 android:fontFamily="@font/helvetica"
                 android:hint="@string/password"
                 android:inputType="textPassword"
@@ -204,8 +184,6 @@
                 android:id="@+id/txtConfirmPassword"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
                 android:fontFamily="@font/helvetica"
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
@@ -235,18 +213,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="15dp">
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/chkReferral"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/i_have_a_referral_code"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:checked="false"
                 android:fontFamily="@font/quicksand"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -256,7 +234,7 @@
             android:id="@+id/constraintReferral"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -309,8 +287,8 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ripple_red"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_red_new"
             android:fontFamily="@font/quicksand"
             android:text="@string/register"
             android:textStyle="bold"
@@ -325,3 +303,4 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

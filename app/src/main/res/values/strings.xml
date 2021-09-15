@@ -16,9 +16,12 @@
     <string name="submit">Submit</string>
     <string name="how_to_play">How To Play</string>
     <string name="welcome">Welcome</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="str_matkawala">Matkawala</string>
     <string name="welcome1">Welcome!</string>
     <string name="enter_your">Enter Your</string>
     <string name="otp_enter">Please type the verification code \n\n Mobile Number</string>
+    <string name="otp_enter_2">Please type the verification code Sent to </string>
     <string name="mobile_number">Mobile Number</string>
     <string name="enter_mobile_number_d">Enter Mobile Number</string>
     <string name="customer_care">Customer care :&#160;</string>
@@ -32,7 +35,8 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="forgot_phone">Forgot Mobile Number?</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_password_new">Forgot Password?</string>
     <string name="enter_mobile_number">Enter the mobile number</string>
     <string name="mobie_number_must_be_ten_digit">Mobile number must be 10-digit</string>
     <string name="please_enter_the_password">Please enter the password</string>
