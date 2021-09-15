@@ -131,4 +131,5 @@ dependencies {
     // Scalable Density Pixels
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation project(':otpview')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
 }

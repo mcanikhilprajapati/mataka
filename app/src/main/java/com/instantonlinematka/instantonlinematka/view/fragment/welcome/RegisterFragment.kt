@@ -172,38 +172,48 @@ class RegisterFragment : Fragment(), MySMSBroadcastReceiver.OTPReceiveListener {
 
                     if (isResponse) {
 
-                        startSMSListener()
+//                        startSMSListener()
+                        val bundle = Bundle()
+                        bundle.putString("mobile", mobileNumber)
+                        bundle.putString("password", password)
+                        bundle.putString("confirmPassword", confirmPassword)
+                        bundle.putString("referral", referral)
+                        Connectivity.switchWelcome(
+                            activity!!, OtpRegisterFragment(),
+                            "OTP_REG_FRAGMENT", bundle
+                        )
 
-                        val mBottomSheetDialog = BottomSheetDialog(activity!!)
-                        val sheetView: View =
-                            activity!!.layoutInflater.inflate(R.layout.sheet_enter_otp, null)
-                        mBottomSheetDialog.setContentView(sheetView)
-                        mBottomSheetDialog.setCancelable(false)
-                        mBottomSheetDialog.show()
-                        bottomSheet = mBottomSheetDialog
 
-                        val txtOTP: AppCompatEditText = sheetView.findViewById(R.id.txtOTPNumber)
-                        txtAlternateOTP = txtOTP
-
-                        val btnVerify: AppCompatButton = sheetView.findViewById(R.id.btnVerify)
-                        val btnCancel: AppCompatButton = sheetView.findViewById(R.id.btnCancel)
-
-                        btnCancel.setSafeOnClickListener {
-                            mBottomSheetDialog.dismiss()
-                        }
-
-                        btnVerify.setSafeOnClickListener {
-
-                            val OTP = txtOTP.text.toString().trim()
-
-                            if (OTP.isEmpty()) {
-                                txtOTP.error = getString(R.string.enter_four_digit_otp)
-                                txtOTP.requestFocus()
-                            }
-                            else {
-                                makeVerifyApiCall(OTP, bottomSheet)
-                            }
-                        }
+//                        val mBottomSheetDialog = BottomSheetDialog(activity!!)
+//                        val sheetView: View =
+//                            activity!!.layoutInflater.inflate(R.layout.sheet_enter_otp, null)
+//                        mBottomSheetDialog.setContentView(sheetView)
+//                        mBottomSheetDialog.setCancelable(false)
+//                        mBottomSheetDialog.show()
+//                        bottomSheet = mBottomSheetDialog
+//
+//                        val txtOTP: AppCompatEditText = sheetView.findViewById(R.id.txtOTPNumber)
+//                        txtAlternateOTP = txtOTP
+//
+//                        val btnVerify: AppCompatButton = sheetView.findViewById(R.id.btnVerify)
+//                        val btnCancel: AppCompatButton = sheetView.findViewById(R.id.btnCancel)
+//
+//                        btnCancel.setSafeOnClickListener {
+//                            mBottomSheetDialog.dismiss()
+//                        }
+//
+//                        btnVerify.setSafeOnClickListener {
+//
+//                            val OTP = txtOTP.text.toString().trim()
+//
+//                            if (OTP.isEmpty()) {
+//                                txtOTP.error = getString(R.string.enter_four_digit_otp)
+//                                txtOTP.requestFocus()
+//                            }
+//                            else {
+//                                makeVerifyApiCall(OTP, bottomSheet)
+//                            }
+//                        }
                     }
                     else {
 
