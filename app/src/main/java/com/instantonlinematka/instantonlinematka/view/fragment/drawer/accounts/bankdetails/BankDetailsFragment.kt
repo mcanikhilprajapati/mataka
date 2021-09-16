@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -503,6 +504,9 @@ class BankDetailsFragment : Fragment() {
                         mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                         mDialog.setCancelable(false)
                         mDialog.setContentView(R.layout.alert_success)
+                        mDialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
+
                         mDialog.window!!.setGravity(Gravity.CENTER)
 
                         mDialog.show()
@@ -591,6 +595,9 @@ class BankDetailsFragment : Fragment() {
                     mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     mDialog.setCancelable(false)
                     mDialog.setContentView(R.layout.alert_success)
+                    mDialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
+
                     mDialog.window!!.setGravity(Gravity.CENTER)
 
                     mDialog.show()

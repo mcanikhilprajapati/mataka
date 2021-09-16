@@ -2,13 +2,13 @@ package com.instantonlinematka.instantonlinematka.view.fragment.welcome
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.instantonlinematka.instantonlinematka.R
@@ -18,7 +18,14 @@ import com.instantonlinematka.instantonlinematka.retrofit.ApiInterface
 import com.instantonlinematka.instantonlinematka.retrofit.RetrofitClient
 import com.instantonlinematka.instantonlinematka.utility.Connectivity
 import com.instantonlinematka.instantonlinematka.utility.SafeClickListener
+import com.instantonlinematka.instantonlinematka.view.activity.DrawerActivity
+import com.instantonlinematka.instantonlinematka.view.activity.WelcomeActivity
 import com.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog
+import kotlinx.android.synthetic.main.alert_success.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
