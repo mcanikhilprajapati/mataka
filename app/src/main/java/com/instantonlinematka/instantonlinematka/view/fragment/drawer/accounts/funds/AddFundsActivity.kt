@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.Window
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -768,6 +769,9 @@ class AddFundsActivity : AppCompatActivity() {
                     mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     mDialog.setCancelable(false)
                     mDialog.setContentView(R.layout.alert_success)
+                    mDialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
+
                     mDialog.window!!.setGravity(Gravity.CENTER)
 
                     mDialog.show()

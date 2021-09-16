@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
@@ -310,6 +311,8 @@ class OtpRegisterFragment : Fragment(),  View.OnClickListener, MySMSBroadcastRec
                     mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     mDialog.setCancelable(false)
                     mDialog.setContentView(R.layout.alert_success)
+                    mDialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
                     mDialog.window!!.setGravity(Gravity.CENTER)
 
                     mDialog.show()

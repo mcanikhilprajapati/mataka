@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatTextView
@@ -230,6 +231,9 @@ class WithdrawFundsFragment : Fragment() {
                     mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     mDialog.setCancelable(false)
                     mDialog.setContentView(R.layout.alert_success)
+                    mDialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    mDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent);
+
                     mDialog.window!!.setGravity(Gravity.CENTER)
 
                     mDialog.show()
