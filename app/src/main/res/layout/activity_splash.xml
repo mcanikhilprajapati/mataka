@@ -58,11 +58,9 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/wp7progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/loader"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="-50dp"
         app:animationDuration="1500"
         app:indicatorColor="@color/colorPrimary"
         app:indicatorHeight="2"

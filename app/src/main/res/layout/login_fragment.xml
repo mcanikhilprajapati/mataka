@@ -33,19 +33,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/wp7progressBar"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/loader"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.5"
-        />
 
     <ir.alirezabdn.wp7progress.WP7ProgressBar
         android:layout_width="0dp"
@@ -211,5 +198,16 @@
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     </LinearLayout>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/wp7progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loader"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

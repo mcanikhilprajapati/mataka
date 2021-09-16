@@ -172,7 +172,7 @@ class SplashActivity : AppCompatActivity() {
 
     fun ProceedifPermitted() {
 
-        wp7progressBar.visibility = View.VISIBLE
+        wp7progressBar.visibility = View.GONE
 
         //getInternetTime()
         // After Removing Internet cut from here
